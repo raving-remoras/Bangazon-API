@@ -11,11 +11,27 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
         fields = "__all__"
 
 
+class ComputerSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = Computer
+        fields = "__all__"
+
+
+class EmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = EmployeeComputer
+        fields = "__all__"
+
 class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
+
+    department = DepartmentSerializer(read_only=True)
+    current_computer = EmployeeComputerSerializer(read_only=True)
 
     class Meta:
         model = Employee
-        fields = "__all__"
+        fields = ("first_name", "last_name", "start_date", "end_date", "is_supervisor", "department", "current_computer", "computer")
 
 
 class TrainingSerializer(serializers.HyperlinkedModelSerializer):
@@ -29,20 +45,6 @@ class EmployeeTrainingSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = EmployeeTraining
-        fields = "__all__"
-
-
-class ComputerSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-        model = Computer
-        fields = "__all__"
-
-
-class EmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-        model = EmployeeComputer
         fields = "__all__"
 
 

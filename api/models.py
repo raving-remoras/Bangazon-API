@@ -37,6 +37,22 @@ class Employee(models.Model):
     is_supervisor = models.BooleanField()
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, blank=True)
 
+    @property
+    def current_computer(self):
+        """Get the employee's current computer, or return None.
+
+        Author: Sebastian Civarolo
+
+        Returns:
+            current_computer -- EmployeeComputer queryset
+        """
+        current_computer = EmployeeComputer.objects.get(employee=self, date_revoked=None)
+
+        if current_computer:
+            return current_computer
+        else:
+            return None
+
     def __str__(self):
         return f"Full Name: {self.first_name} {self.last_name} Start Date: {self.start_date}"
 
