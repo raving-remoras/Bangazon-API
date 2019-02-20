@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'corsheaders',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -130,7 +131,8 @@ CORS_ORIGIN_WHITELIST = (
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
-        'django_filters.rest_framework.DjangoFilterBackend','rest_framework.filters.SearchFilter'
+            'django_filters.rest_framework.DjangoFilterBackend',
+            'rest_framework.filters.SearchFilter'
         ),
 
 }

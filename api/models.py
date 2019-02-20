@@ -113,11 +113,11 @@ class EmployeeComputer(models.Model):
 
 ### E-commerce Models
 class Customer(models.Model):
-    """Defines a model for a customer, including userId, address, and phone number
+    """Defines a model for a customer, address, and phone number
         Author: Jase Hackman
         Returns: __str__ userId, street_address, and phone_number
     """
-    fist_name = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
     username = models.CharField(max_length=50)
@@ -126,12 +126,12 @@ class Customer(models.Model):
     state = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=20)
     phone_number = models.IntegerField()
-    join_date = models.DateTimeField(default=datetime.datetime.now())
+    join_date = models.DateTimeField(default=timezone.now)
     delete_date = models.DateTimeField(default=None, null=True, blank=True)
 
 
     def __str__(self):
-        return f"User: {self.user} Address:{self.street_address} Phone: {self.phone_number}"
+        return f"First Name: {self.first_name} Last Name: {self.last_name} Address:{self.street_address} Phone: {self.phone_number}"
 
 
 # Product Models

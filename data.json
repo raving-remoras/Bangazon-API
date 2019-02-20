@@ -1,0 +1,2723 @@
+[
+{
+  "model": "sessions.session",
+  "pk": "1fpdze7l3tyh3cor9w9ybymckad77trz",
+  "fields": {
+    "session_data": "MWFmMTIzYzQ3N2M2Y2UxNjRjNzgwN2NiYWZhODc1OTRiYzgwMGY5Yjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyODljYjVhMjcxYTE0NjRkZWEwZGQ4ZWM3OTgwOWFjNWY0MGE5ZTBjIn0=",
+    "expire_date": "2019-03-06T17:34:21.021"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "8b6jiqfsqq89h3ourg50bm98z3y7zpjw",
+  "fields": {
+    "session_data": "MWFmMTIzYzQ3N2M2Y2UxNjRjNzgwN2NiYWZhODc1OTRiYzgwMGY5Yjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyODljYjVhMjcxYTE0NjRkZWEwZGQ4ZWM3OTgwOWFjNWY0MGE5ZTBjIn0=",
+    "expire_date": "2019-03-06T17:35:27.189"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "yzqu17qcxg9h0kphgxepm252qn7wnfaz",
+  "fields": {
+    "session_data": "MWFmMTIzYzQ3N2M2Y2UxNjRjNzgwN2NiYWZhODc1OTRiYzgwMGY5Yjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyODljYjVhMjcxYTE0NjRkZWEwZGQ4ZWM3OTgwOWFjNWY0MGE5ZTBjIn0=",
+    "expire_date": "2019-03-06T17:31:48.064"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zbjs6hh03cx0tqh2jc7067m7hx0yk3mf",
+  "fields": {
+    "session_data": "MWFmMTIzYzQ3N2M2Y2UxNjRjNzgwN2NiYWZhODc1OTRiYzgwMGY5Yjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyODljYjVhMjcxYTE0NjRkZWEwZGQ4ZWM3OTgwOWFjNWY0MGE5ZTBjIn0=",
+    "expire_date": "2019-03-06T17:35:33.594"
+  }
+},
+{
+  "model": "api.department",
+  "pk": 1,
+  "fields": {
+    "name": "Sparkly Things",
+    "budget": 1000000
+  }
+},
+{
+  "model": "api.department",
+  "pk": 2,
+  "fields": {
+    "name": "Overthinking",
+    "budget": 1000000
+  }
+},
+{
+  "model": "api.department",
+  "pk": 3,
+  "fields": {
+    "name": "Database Management",
+    "budget": 12000
+  }
+},
+{
+  "model": "api.department",
+  "pk": 4,
+  "fields": {
+    "name": "Whiteboard Product Development",
+    "budget": 150000
+  }
+},
+{
+  "model": "api.department",
+  "pk": 5,
+  "fields": {
+    "name": "Managing Partnerships",
+    "budget": 150000
+  }
+},
+{
+  "model": "api.department",
+  "pk": 6,
+  "fields": {
+    "name": "architect distributed bandwidth",
+    "budget": 230947
+  }
+},
+{
+  "model": "api.department",
+  "pk": 7,
+  "fields": {
+    "name": "repurpose synergistic supply-chains",
+    "budget": 278953
+  }
+},
+{
+  "model": "api.department",
+  "pk": 8,
+  "fields": {
+    "name": "embrace collaborative users",
+    "budget": 12578
+  }
+},
+{
+  "model": "api.department",
+  "pk": 9,
+  "fields": {
+    "name": "transition scalable metrics",
+    "budget": 127865
+  }
+},
+{
+  "model": "api.department",
+  "pk": 10,
+  "fields": {
+    "name": "matrix revolutionary e-services",
+    "budget": 127896
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 1,
+  "fields": {
+    "first_name": "Kelly",
+    "last_name": "Morin",
+    "start_date": "2019-02-20T17:35:10",
+    "end_date": null,
+    "is_supervisor": true,
+    "department": 1
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 2,
+  "fields": {
+    "first_name": "Sebastian",
+    "last_name": "Civarolo",
+    "start_date": "2018-10-01T17:35:04",
+    "end_date": null,
+    "is_supervisor": true,
+    "department": 2
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 3,
+  "fields": {
+    "first_name": "Rachel",
+    "last_name": "Daniel",
+    "start_date": "2018-12-01T06:00:00",
+    "end_date": null,
+    "is_supervisor": true,
+    "department": 3
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 4,
+  "fields": {
+    "first_name": "Jase",
+    "last_name": "Hackman",
+    "start_date": "2019-02-06T17:42:12",
+    "end_date": null,
+    "is_supervisor": true,
+    "department": 4
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 5,
+  "fields": {
+    "first_name": "Brendan",
+    "last_name": "McCray",
+    "start_date": "2019-01-16T17:42:35",
+    "end_date": "2019-02-20T17:42:40",
+    "is_supervisor": false,
+    "department": 2
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 6,
+  "fields": {
+    "first_name": "Joe",
+    "last_name": "Shepherd",
+    "start_date": "2019-01-01T17:47:03",
+    "end_date": null,
+    "is_supervisor": true,
+    "department": 7
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 7,
+  "fields": {
+    "first_name": "Kimmy",
+    "last_name": "Bird",
+    "start_date": "2018-11-01T12:00:00",
+    "end_date": "2019-02-01T17:47:43",
+    "is_supervisor": false,
+    "department": 4
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 8,
+  "fields": {
+    "first_name": "Elyse",
+    "last_name": "Dawson",
+    "start_date": "2019-01-02T12:00:00",
+    "end_date": null,
+    "is_supervisor": false,
+    "department": 3
+  }
+},
+{
+  "model": "api.employee",
+  "pk": 9,
+  "fields": {
+    "first_name": "Austin",
+    "last_name": "Zoradi",
+    "start_date": "2018-10-01T17:48:41",
+    "end_date": "2019-02-18T17:48:55",
+    "is_supervisor": false,
+    "department": 3
+  }
+},
+{
+  "model": "api.training",
+  "pk": 1,
+  "fields": {
+    "title": "Overthinking 101",
+    "start_date": "2019-02-20T17:36:50",
+    "end_date": "2019-02-20T18:00:00",
+    "max_attendees": 12
+  }
+},
+{
+  "model": "api.training",
+  "pk": 2,
+  "fields": {
+    "title": "Optimizing Development Workflow",
+    "start_date": "2019-02-23T12:00:00",
+    "end_date": "2019-02-23T18:00:00",
+    "max_attendees": 10
+  }
+},
+{
+  "model": "api.training",
+  "pk": 3,
+  "fields": {
+    "title": "Public-key object-oriented monitoring",
+    "start_date": "2019-01-01T17:44:48",
+    "end_date": "2019-01-04T17:44:53",
+    "max_attendees": 10
+  }
+},
+{
+  "model": "api.training",
+  "pk": 4,
+  "fields": {
+    "title": "Grass-roots executive structure",
+    "start_date": "2019-03-22T17:45:13",
+    "end_date": "2019-03-25T17:45:25",
+    "max_attendees": 25
+  }
+},
+{
+  "model": "api.training",
+  "pk": 5,
+  "fields": {
+    "title": "Synchronized 24/7 software",
+    "start_date": "2018-12-10T17:45:48",
+    "end_date": "2018-12-13T17:45:53",
+    "max_attendees": 25
+  }
+},
+{
+  "model": "api.training",
+  "pk": 6,
+  "fields": {
+    "title": "Proactive impactful benchmark",
+    "start_date": "2019-02-21T17:48:26",
+    "end_date": "2019-02-21T18:00:00",
+    "max_attendees": 128
+  }
+},
+{
+  "model": "api.training",
+  "pk": 7,
+  "fields": {
+    "title": "Organic 24/7 Local Area Network",
+    "start_date": "2019-01-09T17:48:47",
+    "end_date": "2019-01-16T17:48:56",
+    "max_attendees": 2
+  }
+},
+{
+  "model": "api.employeetraining",
+  "pk": 1,
+  "fields": {
+    "employee": 2,
+    "training": 1
+  }
+},
+{
+  "model": "api.employeetraining",
+  "pk": 2,
+  "fields": {
+    "employee": 3,
+    "training": 2
+  }
+},
+{
+  "model": "api.employeetraining",
+  "pk": 3,
+  "fields": {
+    "employee": 4,
+    "training": 2
+  }
+},
+{
+  "model": "api.employeetraining",
+  "pk": 4,
+  "fields": {
+    "employee": 7,
+    "training": 5
+  }
+},
+{
+  "model": "api.employeetraining",
+  "pk": 5,
+  "fields": {
+    "employee": 5,
+    "training": 3
+  }
+},
+{
+  "model": "api.employeetraining",
+  "pk": 6,
+  "fields": {
+    "employee": 5,
+    "training": 7
+  }
+},
+{
+  "model": "api.computer",
+  "pk": 1,
+  "fields": {
+    "make": "Potato",
+    "model": "IsThisThingOn",
+    "serial_no": "1111111111",
+    "purchase_date": "2019-02-20T17:36:20",
+    "retire_date": null
+  }
+},
+{
+  "model": "api.computer",
+  "pk": 2,
+  "fields": {
+    "make": "Apple",
+    "model": "MacBook Pro",
+    "serial_no": "195725820AB232CT2",
+    "purchase_date": "2019-02-20T17:36:19",
+    "retire_date": null
+  }
+},
+{
+  "model": "api.computer",
+  "pk": 3,
+  "fields": {
+    "make": "Apple",
+    "model": "1234543",
+    "serial_no": "9302930293492",
+    "purchase_date": "2019-02-20T17:47:05",
+    "retire_date": null
+  }
+},
+{
+  "model": "api.computer",
+  "pk": 4,
+  "fields": {
+    "make": "Compaq",
+    "model": "sdf32",
+    "serial_no": "12345432",
+    "purchase_date": "2018-09-12T17:47:28",
+    "retire_date": "2019-02-20T17:47:30"
+  }
+},
+{
+  "model": "api.computer",
+  "pk": 5,
+  "fields": {
+    "make": "Dell",
+    "model": "XPS15",
+    "serial_no": "1234543fd",
+    "purchase_date": "2019-02-20T17:47:46",
+    "retire_date": null
+  }
+},
+{
+  "model": "api.computer",
+  "pk": 6,
+  "fields": {
+    "make": "Compaq",
+    "model": "SpeedTurtle",
+    "serial_no": "93ls92834",
+    "purchase_date": "2016-06-16T17:48:39",
+    "retire_date": "2018-07-18T17:48:45"
+  }
+},
+{
+  "model": "api.computer",
+  "pk": 7,
+  "fields": {
+    "make": "Apple",
+    "model": "Macbook",
+    "serial_no": "1234567dfghjk",
+    "purchase_date": "2019-02-20T17:49:02",
+    "retire_date": null
+  }
+},
+{
+  "model": "api.computer",
+  "pk": 8,
+  "fields": {
+    "make": "Apple",
+    "model": "imac",
+    "serial_no": "23456543",
+    "purchase_date": "2019-02-20T17:49:16",
+    "retire_date": null
+  }
+},
+{
+  "model": "api.employeecomputer",
+  "pk": 1,
+  "fields": {
+    "employee": 1,
+    "computer": 1,
+    "date_assigned": "2019-02-20T17:36:39",
+    "date_revoked": null
+  }
+},
+{
+  "model": "api.employeecomputer",
+  "pk": 2,
+  "fields": {
+    "employee": 2,
+    "computer": 2,
+    "date_assigned": "2019-02-01T17:36:52",
+    "date_revoked": null
+  }
+},
+{
+  "model": "api.employeecomputer",
+  "pk": 3,
+  "fields": {
+    "employee": 2,
+    "computer": 1,
+    "date_assigned": "2018-10-01T17:37:58",
+    "date_revoked": "2019-02-20T12:00:00"
+  }
+},
+{
+  "model": "api.employeecomputer",
+  "pk": 4,
+  "fields": {
+    "employee": 9,
+    "computer": 5,
+    "date_assigned": "2018-10-01T17:49:55",
+    "date_revoked": "2019-02-11T17:50:05"
+  }
+},
+{
+  "model": "api.employeecomputer",
+  "pk": 5,
+  "fields": {
+    "employee": 8,
+    "computer": 8,
+    "date_assigned": "2019-02-02T18:00:00",
+    "date_revoked": null
+  }
+},
+{
+  "model": "api.employeecomputer",
+  "pk": 6,
+  "fields": {
+    "employee": 7,
+    "computer": 4,
+    "date_assigned": "2018-11-01T12:00:00",
+    "date_revoked": "2019-02-01T12:00:00"
+  }
+},
+{
+  "model": "api.employeecomputer",
+  "pk": 7,
+  "fields": {
+    "employee": 4,
+    "computer": 4,
+    "date_assigned": "2019-02-04T12:00:00",
+    "date_revoked": null
+  }
+},
+{
+  "model": "api.customer",
+  "pk": 1,
+  "fields": {
+    "first_name": "Sebastian",
+    "last_name": "Civarolo",
+    "email": "sebastian@bangazon.com",
+    "username": "scivarolo",
+    "street_address": "123 Nolensville Pike",
+    "city": "Nashville",
+    "state": "TN",
+    "zipcode": "37209",
+    "phone_number": 8325109662,
+    "join_date": "2019-02-20T17:40:35",
+    "delete_date": null
+  }
+},
+{
+  "model": "api.customer",
+  "pk": 2,
+  "fields": {
+    "first_name": "mr",
+    "last_name": "Bob",
+    "email": "mrBob@bobbybob.com",
+    "username": "mrBob",
+    "street_address": "123 BobBob",
+    "city": "New Bob",
+    "state": "NY",
+    "zipcode": "12312",
+    "phone_number": 1231231234,
+    "join_date": "2019-02-20T17:40:30",
+    "delete_date": null
+  }
+},
+{
+  "model": "api.customer",
+  "pk": 3,
+  "fields": {
+    "first_name": "mr",
+    "last_name": "Fred",
+    "email": "fred@fred.net",
+    "username": "mrFred",
+    "street_address": "123 Fred Street",
+    "city": "Fredville",
+    "state": "MT",
+    "zipcode": "23423",
+    "phone_number": 1231231234,
+    "join_date": "2019-02-20T17:41:24",
+    "delete_date": null
+  }
+},
+{
+  "model": "api.customer",
+  "pk": 4,
+  "fields": {
+    "first_name": "John",
+    "last_name": "Johnerson",
+    "email": "jj@email.com",
+    "username": "johners",
+    "street_address": "1235 Johnson Lane",
+    "city": "Johnson",
+    "state": "TN",
+    "zipcode": "19247",
+    "phone_number": 8005551728,
+    "join_date": "2019-02-20T17:41:31",
+    "delete_date": null
+  }
+},
+{
+  "model": "api.customer",
+  "pk": 5,
+  "fields": {
+    "first_name": "Kelly",
+    "last_name": "Morin",
+    "email": "kmorin06@gmail.com",
+    "username": "kmorin",
+    "street_address": "9017 Chardonnay Trace",
+    "city": "Franklin",
+    "state": "TN",
+    "zipcode": "37067",
+    "phone_number": 6158389644,
+    "join_date": "2019-02-20T17:49:36",
+    "delete_date": null
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 1,
+  "fields": {
+    "name": "Accessories"
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 2,
+  "fields": {
+    "name": "Art & Collectibles"
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 3,
+  "fields": {
+    "name": "Bath & Beauty"
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 4,
+  "fields": {
+    "name": "Books, Movies & Music"
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 5,
+  "fields": {
+    "name": "Clothing"
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 6,
+  "fields": {
+    "name": "Craft Supplies & Tools"
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 7,
+  "fields": {
+    "name": "Electronics"
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 8,
+  "fields": {
+    "name": "Home & Living"
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 9,
+  "fields": {
+    "name": "Pet Supplies"
+  }
+},
+{
+  "model": "api.producttype",
+  "pk": 10,
+  "fields": {
+    "name": "Toys & Games"
+  }
+},
+{
+  "model": "api.product",
+  "pk": 1,
+  "fields": {
+    "seller": 1,
+    "product_type": 3,
+    "title": "Cat Suit",
+    "description": "Wear it in the bath! Only 2 ever made!",
+    "price": 6500,
+    "quantity": 2,
+    "delete_date": null,
+    "local_delivery": true,
+    "delivery_city": "Nashville",
+    "delivery_state": "TN"
+  }
+},
+{
+  "model": "api.product",
+  "pk": 2,
+  "fields": {
+    "seller": 2,
+    "product_type": 4,
+    "title": "Stratocaster",
+    "description": "2010 American Deluxe Stratocaster",
+    "price": 1600,
+    "quantity": 4,
+    "delete_date": null,
+    "local_delivery": false,
+    "delivery_city": null,
+    "delivery_state": null
+  }
+},
+{
+  "model": "api.product",
+  "pk": 3,
+  "fields": {
+    "seller": 2,
+    "product_type": 4,
+    "title": "Telecaster",
+    "description": "It has that country twang",
+    "price": 1300,
+    "quantity": 2,
+    "delete_date": null,
+    "local_delivery": true,
+    "delivery_city": "New York",
+    "delivery_state": "NY"
+  }
+},
+{
+  "model": "api.product",
+  "pk": 4,
+  "fields": {
+    "seller": 3,
+    "product_type": 9,
+    "title": "Cat",
+    "description": "They need a good home, or to be made into something beautiful. \r\n\r\n....... and I hear they are delicious.....yumm...",
+    "price": 1,
+    "quantity": 47,
+    "delete_date": null,
+    "local_delivery": false,
+    "delivery_city": null,
+    "delivery_state": null
+  }
+},
+{
+  "model": "api.product",
+  "pk": 5,
+  "fields": {
+    "seller": 4,
+    "product_type": 3,
+    "title": "Foot Cream",
+    "description": "There's a little left-- free to a good home. $5 to a bad home.",
+    "price": 5,
+    "quantity": 1,
+    "delete_date": null,
+    "local_delivery": false,
+    "delivery_city": null,
+    "delivery_state": null
+  }
+},
+{
+  "model": "api.product",
+  "pk": 6,
+  "fields": {
+    "seller": 4,
+    "product_type": 5,
+    "title": "Steel Wool Socks",
+    "description": "Homemade. Warm and a bit abrasive.",
+    "price": 100,
+    "quantity": 30,
+    "delete_date": null,
+    "local_delivery": true,
+    "delivery_city": "Johnson",
+    "delivery_state": "TN"
+  }
+},
+{
+  "model": "api.paymenttype",
+  "pk": 1,
+  "fields": {
+    "name": "Sebastian's Credit Card",
+    "account_number": 1224882911940029,
+    "customer": 1,
+    "delete_date": null
+  }
+},
+{
+  "model": "api.paymenttype",
+  "pk": 2,
+  "fields": {
+    "name": "Sebastian's Old Credit Card",
+    "account_number": 5837219199990921,
+    "customer": 1,
+    "delete_date": "2019-02-20T17:42:19"
+  }
+},
+{
+  "model": "api.paymenttype",
+  "pk": 3,
+  "fields": {
+    "name": "JohnJohn's Checking",
+    "account_number": 19490292837,
+    "customer": 4,
+    "delete_date": null
+  }
+},
+{
+  "model": "api.paymenttype",
+  "pk": 4,
+  "fields": {
+    "name": "JohnJohn's Credit Card",
+    "account_number": 109418102918,
+    "customer": 4,
+    "delete_date": "2019-02-20T17:45:03"
+  }
+},
+{
+  "model": "api.paymenttype",
+  "pk": 5,
+  "fields": {
+    "name": "Bob's visa",
+    "account_number": 1234565432345,
+    "customer": 2,
+    "delete_date": null
+  }
+},
+{
+  "model": "api.order",
+  "pk": 1,
+  "fields": {
+    "customer": 1,
+    "payment_type": null,
+    "payment_date": null
+  }
+},
+{
+  "model": "api.order",
+  "pk": 2,
+  "fields": {
+    "customer": 1,
+    "payment_type": 1,
+    "payment_date": "2019-02-20T17:45:29"
+  }
+},
+{
+  "model": "api.order",
+  "pk": 3,
+  "fields": {
+    "customer": 4,
+    "payment_type": 3,
+    "payment_date": "2019-02-20T17:45:44"
+  }
+},
+{
+  "model": "api.order",
+  "pk": 4,
+  "fields": {
+    "customer": 2,
+    "payment_type": 5,
+    "payment_date": "2019-02-20T17:45:48"
+  }
+},
+{
+  "model": "api.order",
+  "pk": 5,
+  "fields": {
+    "customer": 4,
+    "payment_type": null,
+    "payment_date": null
+  }
+},
+{
+  "model": "api.orderproduct",
+  "pk": 1,
+  "fields": {
+    "product": 2,
+    "order": 1
+  }
+},
+{
+  "model": "api.orderproduct",
+  "pk": 2,
+  "fields": {
+    "product": 4,
+    "order": 2
+  }
+},
+{
+  "model": "api.orderproduct",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "order": 3
+  }
+},
+{
+  "model": "api.orderproduct",
+  "pk": 4,
+  "fields": {
+    "product": 3,
+    "order": 2
+  }
+},
+{
+  "model": "api.orderproduct",
+  "pk": 5,
+  "fields": {
+    "product": 1,
+    "order": 4
+  }
+},
+{
+  "model": "api.orderproduct",
+  "pk": 6,
+  "fields": {
+    "product": 2,
+    "order": 4
+  }
+},
+{
+  "model": "api.orderproduct",
+  "pk": 7,
+  "fields": {
+    "product": 4,
+    "order": 5
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add computer",
+    "content_type": 7,
+    "codename": "add_computer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change computer",
+    "content_type": 7,
+    "codename": "change_computer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete computer",
+    "content_type": 7,
+    "codename": "delete_computer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view computer",
+    "content_type": 7,
+    "codename": "view_computer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add customer",
+    "content_type": 8,
+    "codename": "add_customer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change customer",
+    "content_type": 8,
+    "codename": "change_customer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete customer",
+    "content_type": 8,
+    "codename": "delete_customer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view customer",
+    "content_type": 8,
+    "codename": "view_customer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add department",
+    "content_type": 9,
+    "codename": "add_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change department",
+    "content_type": 9,
+    "codename": "change_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete department",
+    "content_type": 9,
+    "codename": "delete_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view department",
+    "content_type": 9,
+    "codename": "view_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add employee",
+    "content_type": 10,
+    "codename": "add_employee"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change employee",
+    "content_type": 10,
+    "codename": "change_employee"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete employee",
+    "content_type": 10,
+    "codename": "delete_employee"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view employee",
+    "content_type": 10,
+    "codename": "view_employee"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add employee computer",
+    "content_type": 11,
+    "codename": "add_employeecomputer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change employee computer",
+    "content_type": 11,
+    "codename": "change_employeecomputer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete employee computer",
+    "content_type": 11,
+    "codename": "delete_employeecomputer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view employee computer",
+    "content_type": 11,
+    "codename": "view_employeecomputer"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add employee training",
+    "content_type": 12,
+    "codename": "add_employeetraining"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change employee training",
+    "content_type": 12,
+    "codename": "change_employeetraining"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete employee training",
+    "content_type": 12,
+    "codename": "delete_employeetraining"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view employee training",
+    "content_type": 12,
+    "codename": "view_employeetraining"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add order",
+    "content_type": 13,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change order",
+    "content_type": 13,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete order",
+    "content_type": 13,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view order",
+    "content_type": 13,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add order product",
+    "content_type": 14,
+    "codename": "add_orderproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change order product",
+    "content_type": 14,
+    "codename": "change_orderproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete order product",
+    "content_type": 14,
+    "codename": "delete_orderproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view order product",
+    "content_type": 14,
+    "codename": "view_orderproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add payment type",
+    "content_type": 15,
+    "codename": "add_paymenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change payment type",
+    "content_type": 15,
+    "codename": "change_paymenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete payment type",
+    "content_type": 15,
+    "codename": "delete_paymenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view payment type",
+    "content_type": 15,
+    "codename": "view_paymenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add product",
+    "content_type": 16,
+    "codename": "add_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change product",
+    "content_type": 16,
+    "codename": "change_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete product",
+    "content_type": 16,
+    "codename": "delete_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view product",
+    "content_type": 16,
+    "codename": "view_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add product type",
+    "content_type": 17,
+    "codename": "add_producttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change product type",
+    "content_type": 17,
+    "codename": "change_producttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete product type",
+    "content_type": 17,
+    "codename": "delete_producttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view product type",
+    "content_type": 17,
+    "codename": "view_producttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add training",
+    "content_type": 18,
+    "codename": "add_training"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change training",
+    "content_type": 18,
+    "codename": "change_training"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete training",
+    "content_type": 18,
+    "codename": "delete_training"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view training",
+    "content_type": 18,
+    "codename": "view_training"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$120000$ftXYu5tTyvfL$iUhe23wBHUO91vnPM3LJukJnG7tnnLlChseEF1EdhLA=",
+    "last_login": "2019-02-20T17:35:33.591",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@bangazon.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-02-20T17:31:32.679",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2019-02-20T17:35:04.915",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Sparkly Things",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2019-02-20T17:35:12.285",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Full Name: Kelly Morin Start Date: 2019-02-20 17:35:10",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2019-02-20T17:35:26.412",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Full Name: Sebastian Civarolo Start Date: 2018-10-01 17:35:04",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2019-02-20T17:35:42.822",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Overthinking",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2019-02-20T17:35:46.920",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Full Name: Sebastian Civarolo Start Date: 2018-10-01 17:35:04",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"department\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2019-02-20T17:36:22.533",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Potato IsThisThingOn - Serial No: 1111111111",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2019-02-20T17:36:23.276",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Apple MacBook Pro - Serial No: 195725820AB232CT2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2019-02-20T17:36:41.362",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Kelly Morin: Potato IsThisThingOn, Serial No: 1111111111",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2019-02-20T17:36:54.499",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "Sebastian Civarolo: Apple MacBook Pro, Serial No: 195725820AB232CT2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2019-02-20T17:36:56.111",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "Accessories",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2019-02-20T17:37:00.946",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "1",
+    "object_repr": "Overthinking 101 training session is scheduled for 2019-02-20 17:36:50 and ends 2019-02-20 18:00:00. It can hold a maximum of 12 attendees",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2019-02-20T17:37:21.516",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "1",
+    "object_repr": "Full Name: Sebastian Civarolo Start Date: 2018-10-01 17:35:04 is registered for Overthinking 101 training session is scheduled for 2019-02-20 17:36:50 and ends 2019-02-20 18:00:00. It can hold a maxim",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2019-02-20T17:37:27.368",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "2",
+    "object_repr": "Art & Collectibles",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2019-02-20T17:37:54.698",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "3",
+    "object_repr": "Bath & Beauty",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2019-02-20T17:38:08.256",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "4",
+    "object_repr": "Books, Movies & Music",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2019-02-20T17:38:10.162",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "Sebastian Civarolo: Potato IsThisThingOn, Serial No: 1111111111",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2019-02-20T17:38:15.365",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "5",
+    "object_repr": "Clothing",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2019-02-20T17:38:26.122",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "6",
+    "object_repr": "Craft Supplies & Tools",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2019-02-20T17:38:36.977",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "7",
+    "object_repr": "Electronics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2019-02-20T17:38:47.322",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "8",
+    "object_repr": "Home & Living",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2019-02-20T17:39:06.607",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Database Management",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2019-02-20T17:39:10.044",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Full Name: Rachel Daniel Start Date: 2018-12-01 06:00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2019-02-20T17:39:22.754",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "9",
+    "object_repr": "Pet Supplies",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2019-02-20T17:39:40.377",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "10",
+    "object_repr": "Toys & Games",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2019-02-20T17:40:12.391",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "2",
+    "object_repr": "Optimizing Development Workflow training session is scheduled for 2019-02-23 12:00:00 and ends 2019-02-23 18:00:00. It can hold a maximum of 10 attendees",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2019-02-20T17:40:41.805",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "First Name: Sebastian Last Name: Civarolo Address:123 Nolensville Pike Phone: 8325109662",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2019-02-20T17:41:10.692",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "Whiteboard Product Development",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2019-02-20T17:41:22.495",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "Managing Partnerships",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2019-02-20T17:41:24.157",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "First Name: mr Last Name: Bob Address:123 BobBob Phone: 1231231234",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2019-02-20T17:41:27.288",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "1",
+    "object_repr": "Title: Cat Suit Description:Wear it in the bath! Only 2 ever made! Price:6500 Qty:2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2019-02-20T17:42:00.690",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "1",
+    "object_repr": "Sebastian's Credit Card",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2019-02-20T17:42:19.824",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Full Name: Jase Hackman Start Date: 2019-02-06 17:42:12",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2019-02-20T17:42:20.644",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "2",
+    "object_repr": "Sebastian's Old Credit Card",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2019-02-20T17:42:22.474",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "First Name: mr Last Name: Fred Address:123 Fred Street Phone: 1231231234",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2019-02-20T17:42:45.613",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Full Name: Brendan McCray Start Date: 2019-01-16 17:42:35",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2019-02-20T17:43:13.310",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "First Name: John Last Name: Johnerson Address:1235 Johnson Lane Phone: 8005551728",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2019-02-20T17:43:30.986",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "2",
+    "object_repr": "Full Name: Rachel Daniel Start Date: 2018-12-01 06:00:00 is registered for Optimizing Development Workflow training session is scheduled for 2019-02-23 12:00:00 and ends 2019-02-23 18:00:00. It can ho",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2019-02-20T17:43:37.943",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "3",
+    "object_repr": "Full Name: Jase Hackman Start Date: 2019-02-06 17:42:12 is registered for Optimizing Development Workflow training session is scheduled for 2019-02-23 12:00:00 and ends 2019-02-23 18:00:00. It can hol",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2019-02-20T17:43:41.630",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "2",
+    "object_repr": "Title: Stratocaster Description:2010 American Deluxe Stratocaster Price:1600 Qty:4",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2019-02-20T17:44:14.394",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "3",
+    "object_repr": "JohnJohn's Checking",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2019-02-20T17:44:14.462",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "3",
+    "object_repr": "Title: Telecaster Description:It has that country twang Price:1300 Qty:2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2019-02-20T17:44:48.612",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "4",
+    "object_repr": "Title: Cat Description:They need a good home, or to be made into something beautiful. Price:1 Qty:47",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2019-02-20T17:44:50.184",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "1",
+    "object_repr": "Order: 1, Customer Name: Sebastian Civarolo, Payment Type: None",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2019-02-20T17:44:56.894",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "3",
+    "object_repr": "Public-key object-oriented monitoring training session is scheduled for 2019-01-01 17:44:48 and ends 2019-01-04 17:44:53. It can hold a maximum of 10 attendees",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2019-02-20T17:45:05.455",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "4",
+    "object_repr": "JohnJohn's Credit Card",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2019-02-20T17:45:29.253",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "4",
+    "object_repr": "Grass-roots executive structure training session is scheduled for 2019-03-22 17:45:13 and ends 2019-03-25 17:45:25. It can hold a maximum of 25 attendees",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2019-02-20T17:45:38.114",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "2",
+    "object_repr": "Order: 2, Customer Name: Sebastian Civarolo, Payment Type: Sebastian's Credit Card",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2019-02-20T17:45:45.399",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "3",
+    "object_repr": "Order: 3, Customer Name: John Johnerson, Payment Type: JohnJohn's Checking",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2019-02-20T17:45:47.180",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "5",
+    "object_repr": "Bob's visa",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2019-02-20T17:45:54.961",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "4",
+    "object_repr": "Order: 4, Customer Name: mr Bob, Payment Type: Bob's visa",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2019-02-20T17:45:55.582",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Product: Title: Stratocaster Description:2010 American Deluxe Stratocaster Price:1600 Qty:4 Order:Order: 1, Customer Name: Sebastian Civarolo, Payment Type: None",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2019-02-20T17:45:57.554",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "4",
+    "object_repr": "Order: 4, Customer Name: mr Bob, Payment Type: Bob's visa",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2019-02-20T17:45:57.632",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "5",
+    "object_repr": "Synchronized 24/7 software training session is scheduled for 2018-12-10 17:45:48 and ends 2018-12-13 17:45:53. It can hold a maximum of 25 attendees",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2019-02-20T17:46:08.823",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Product: Title: Cat Description:They need a good home, or to be made into something beautiful. Price:1 Qty:47 Order:Order: 2, Customer Name: Sebastian Civarolo, Payment Type: Sebastian's Credit Card",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2019-02-20T17:46:11.876",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "3",
+    "object_repr": "Product: Title: Cat Suit Description:Wear it in the bath! Only 2 ever made! Price:6500 Qty:2 Order:Order: 3, Customer Name: John Johnerson, Payment Type: JohnJohn's Checking",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2019-02-20T17:46:22.657",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "4",
+    "object_repr": "Product: Title: Telecaster Description:It has that country twang Price:1300 Qty:2 Order:Order: 2, Customer Name: Sebastian Civarolo, Payment Type: Sebastian's Credit Card",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2019-02-20T17:46:31.006",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "5",
+    "object_repr": "Product: Title: Cat Suit Description:Wear it in the bath! Only 2 ever made! Price:6500 Qty:2 Order:Order: 4, Customer Name: mr Bob, Payment Type: Bob's visa",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2019-02-20T17:46:32.745",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "6",
+    "object_repr": "architect distributed bandwidth",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2019-02-20T17:46:41.039",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "6",
+    "object_repr": "Product: Title: Stratocaster Description:2010 American Deluxe Stratocaster Price:1600 Qty:4 Order:Order: 4, Customer Name: mr Bob, Payment Type: Bob's visa",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2019-02-20T17:46:47.893",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "7",
+    "object_repr": "repurpose synergistic supply-chains",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2019-02-20T17:47:09.453",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Apple 1234543 - Serial No: 9302930293492",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2019-02-20T17:47:13.392",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "5",
+    "object_repr": "Title: Foot Cream Description:There's a little left-- free to a good home. $5 to a bad home. Price:5 Qty:1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2019-02-20T17:47:17.580",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Full Name: Joe Shepherd Start Date: 2019-01-01 17:47:03",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2019-02-20T17:47:18.319",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "8",
+    "object_repr": "embrace collaborative users",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2019-02-20T17:47:34.251",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Compaq sdf32 - Serial No: 12345432",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2019-02-20T17:47:38.178",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "9",
+    "object_repr": "transition scalable metrics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2019-02-20T17:47:48.490",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "7",
+    "object_repr": "Full Name: Kimmy Bird Start Date: 2018-11-01 12:00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2019-02-20T17:47:50.515",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Dell XPS15 - Serial No: 1234543fd",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2019-02-20T17:47:57.015",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "10",
+    "object_repr": "matrix revolutionary e-services",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2019-02-20T17:48:22.958",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "8",
+    "object_repr": "Full Name: Elyse Dawson Start Date: 2019-01-02 12:00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2019-02-20T17:48:33.565",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "6",
+    "object_repr": "Proactive impactful benchmark training session is scheduled for 2019-02-21 17:48:26 and ends 2019-02-21 18:00:00. It can hold a maximum of 128 attendees",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2019-02-20T17:48:50.371",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Compaq SpeedTurtle - Serial No: 93ls92834",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2019-02-20T17:49:00.710",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "7",
+    "object_repr": "Organic 24/7 Local Area Network training session is scheduled for 2019-01-09 17:48:47 and ends 2019-01-16 17:48:56. It can hold a maximum of 2 attendees",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2019-02-20T17:49:03.292",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "9",
+    "object_repr": "Full Name: Austin Zoradi Start Date: 2018-10-01 17:48:41",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2019-02-20T17:49:06.685",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "Apple Macbook - Serial No: 1234567dfghjk",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2019-02-20T17:49:20.958",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "Apple imac - Serial No: 23456543",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2019-02-20T17:49:30.286",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "6",
+    "object_repr": "Title: Steel Wool Socks Description:Homemade. Warm and a bit abrasive. Price:100 Qty:30",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2019-02-20T17:49:54.264",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "5",
+    "object_repr": "Order: 5, Customer Name: John Johnerson, Payment Type: None",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2019-02-20T17:50:07.546",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "4",
+    "object_repr": "Austin Zoradi: Dell XPS15, Serial No: 1234543fd",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2019-02-20T17:50:13.503",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "First Name: Kelly Last Name: Morin Address:9017 Chardonnay Trace Phone: 6158389644",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2019-02-20T17:50:19.762",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "7",
+    "object_repr": "Product: Title: Cat Description:They need a good home, or to be made into something beautiful. Price:1 Qty:47 Order:Order: 5, Customer Name: John Johnerson, Payment Type: None",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2019-02-20T17:51:02.476",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "Elyse Dawson: Apple imac, Serial No: 23456543",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2019-02-20T17:51:16.812",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "4",
+    "object_repr": "Title: Cat Description:They need a good home, or to be made into something beautiful. \r\n\r\n....... and I hear they are delicious.....yumm... Price:1 Qty:47",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 84,
+  "fields": {
+    "action_time": "2019-02-20T17:51:25.896",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "4",
+    "object_repr": "Full Name: Kimmy Bird Start Date: 2018-11-01 12:00:00 is registered for Proactive impactful benchmark training session is scheduled for 2019-02-21 17:48:26 and ends 2019-02-21 18:00:00. It can hold a ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 85,
+  "fields": {
+    "action_time": "2019-02-20T17:51:50.999",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "4",
+    "object_repr": "Full Name: Kimmy Bird Start Date: 2018-11-01 12:00:00 is registered for Synchronized 24/7 software training session is scheduled for 2018-12-10 17:45:48 and ends 2018-12-13 17:45:53. It can hold a max",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"training\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 86,
+  "fields": {
+    "action_time": "2019-02-20T17:51:53.489",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "6",
+    "object_repr": "Kimmy Bird: Compaq sdf32, Serial No: 12345432",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 87,
+  "fields": {
+    "action_time": "2019-02-20T17:52:24.185",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "5",
+    "object_repr": "Full Name: Brendan McCray Start Date: 2019-01-16 17:42:35 is registered for Public-key object-oriented monitoring training session is scheduled for 2019-01-01 17:44:48 and ends 2019-01-04 17:44:53. It",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 88,
+  "fields": {
+    "action_time": "2019-02-20T17:52:44.971",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "6",
+    "object_repr": "Full Name: Brendan McCray Start Date: 2019-01-16 17:42:35 is registered for Organic 24/7 Local Area Network training session is scheduled for 2019-01-09 17:48:47 and ends 2019-01-16 17:48:56. It can h",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 89,
+  "fields": {
+    "action_time": "2019-02-20T17:53:21.045",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "7",
+    "object_repr": "Jase Hackman: Compaq sdf32, Serial No: 12345432",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]
