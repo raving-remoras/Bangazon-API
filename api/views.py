@@ -35,6 +35,7 @@ class ComputerViewSet(viewsets.ModelViewSet):
 class DepartmentViewSet(viewsets.ModelViewSet):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
+    http_method_names = ("get", "post", "put", "options")
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):
