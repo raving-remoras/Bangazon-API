@@ -76,17 +76,35 @@ class PaymentTypeSerializer(serializers.HyperlinkedModelSerializer):
         model = PaymentType
         fields = "__all__"
 
-
-class OrderSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-        model = Order
-        fields = "__all__"
-
-
 class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
+    product=ProductSerializer(read_only=True)
 
     class Meta:
         model = OrderProduct
-        fields = "__all__"
+        fields = ("product",)
+
+
+class OrderSerializer(serializers.HyperlinkedModelSerializer):
+
+
+
+    def __init__(self, *args, **kwargs):
+        super(OrderSerializer, self).__init__(*args, **kwargs)
+        request = kwargs['context']['request']
+        keyword = request.query_params.get('_include', None)
+
+        if(keyword=="customers"):
+            print("Im HERE!")
+            self.fields['customer']=CustomerSerializer(read_only=True)
+
+        elif(keyword=="products"):
+            self.fields['product']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
+
+
+    class Meta:
+        model = Order
+        fields = ("customer", "payment_type", "payment_date")
+
+
+
 
