@@ -145,13 +145,14 @@ class CustomerSerializer(serializers.HyperlinkedModelSerializer):
         super(CustomerSerializer, self).__init__(*args, **kwargs)
         request = kwargs['context']['request']
         include = request.query_params.get("_include")
-        print(include)
 
-        if "products" in include:
-            self.fields["product"] = ProductSerializer(source="product_set", many=True, read_only=True)
+        if include:
+            if "products" in include:
+                self.fields["product"] = ProductSerializer(source="product_set", many=True, read_only=True)
 
-        if "payments" in include:
-            self.fields["used_paymenttypes"] = PaymentTypeSerializer(read_only=True, many=True)
+            if "payments" in include:
+                self.fields["used_paymenttypes"] = PaymentTypeSerializer(read_only=True, many=True)
+
 
     class Meta:
         model = Customer
