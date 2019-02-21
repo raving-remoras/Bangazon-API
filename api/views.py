@@ -32,11 +32,18 @@ class ComputerViewSet(viewsets.ModelViewSet):
     def destroy(self, request, *args, **kwargs):
         today = datetime.now()
         instance=self.get_object()
-        assigned_employee = EmployeeComputer.objects.filter(computer = instance.id)
+        employee_list = EmployeeComputer.objects.filter(computer = instance.id)
 
-        if len(assigned_employee) > 0:
-            instance.retire_date = today
-            instance.save()
+        if len(employee_list) > 0:
+            try:
+                assigned_employee = EmployeeComputer.objects.get(computer=instance.id, date_revoked=None)
+                instance.retire_date = today
+                instance.save()
+                assigned_employee.date_revoked = today
+                assigned_employee.save()
+            except:
+                instance.retire_date = today
+                instance.save()
         else:
             self.perform_destroy(instance)
             return Response(status=status.HTTP_204_NO_CONTENT)
