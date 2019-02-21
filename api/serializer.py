@@ -86,7 +86,15 @@ class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
+    """
+    This Serializer is for Orders. Includes conditional fields if the correct keywords are added to the url.
 
+    Models: Order, Product, OrderProducts
+
+    Views: OrderViewSet
+
+    Author(s): Jase Hackman
+    """
 
 
     def __init__(self, *args, **kwargs):

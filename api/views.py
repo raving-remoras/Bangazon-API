@@ -79,11 +79,20 @@ class PaymentTypeViewSet(viewsets.ModelViewSet):
 
 
 class OrderViewSet(viewsets.ModelViewSet):
+    """
+    This ViewSet deals with Post, Update, Get, and Delete for Orders
 
+    Models: Order, OrderProducts
+
+    Serializers: OrderSerializer
+
+    Author(s): Jase Hackman
+    """
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
     def get_queryset(self):
+        # If a user includes /?complete=true or /?complete=false the query will filter based on those conditions
         query_set = Order.objects.all()
 
         print(self.request.query_params)
@@ -97,6 +106,7 @@ class OrderViewSet(viewsets.ModelViewSet):
         return query_set
 
     def destroy(self, request, *args, **kwargs):
+        # If an order is not completed it will delete and the OrderProduct relationships will also delete. If it is completed it will raise an error.
         instance = self.get_object()
         print("instance", instance)
         if instance.payment_date == None:
