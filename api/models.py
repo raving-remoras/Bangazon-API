@@ -3,6 +3,7 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+
 ### HR Models
 
 class Department(models.Model):
@@ -145,10 +146,28 @@ class Customer(models.Model):
     join_date = models.DateTimeField(default=timezone.now)
     delete_date = models.DateTimeField(default=None, null=True, blank=True)
 
+    @property
+    def used_paymenttypes(self):
+        """ Gets used payment types for customer. Else returns none.
+
+        Author: Rachel Daniel
+
+        Returns: used_paymenttypes (queryset) or None
+        """
+
+        # get customer's associated payment types
+        payment_types = PaymentType.objects.filter(customer=self)
+
+        # get all orders for customer with associated payment types
+        orders = Order.objects.filter(customer=self)
+
+        # exclude customer payment types not in orders
+        used_paymenttypes = [pmt for pmt in payment_types for order in orders if pmt == order.payment_type]
+
+        return used_paymenttypes
 
     def __str__(self):
         return f"First Name: {self.first_name} Last Name: {self.last_name} Address:{self.street_address} Phone: {self.phone_number}"
-
 
 # Product Models
 class ProductType(models.Model):

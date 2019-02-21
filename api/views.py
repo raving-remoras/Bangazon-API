@@ -1,17 +1,11 @@
 from datetime import datetime
 from django.shortcuts import render
-# from django_filters import rest_framework as filters
-
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.reverse import reverse
-
-from rest_framework import filters
-
 from api.models import Employee, Computer, Department, Training, EmployeeTraining, EmployeeComputer, Customer, ProductType, Product, PaymentType, Order, OrderProduct
-
 from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer
 
 @api_view(['GET'])
@@ -60,10 +54,12 @@ class DepartmentViewSet(viewsets.ModelViewSet):
 
         return queryset
 
+
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
     http_method_names = ("get", "post", "put", "options")
+
 
 class TrainingViewSet(viewsets.ModelViewSet):
     serializer_class = TrainingSerializer
@@ -106,6 +102,9 @@ class EmployeeComputerViewSet(viewsets.ModelViewSet):
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
+    http_method_names = ["get", "post", "put", "options"]
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ("first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
 
 
 class ProductTypeViewSet(viewsets.ModelViewSet):
