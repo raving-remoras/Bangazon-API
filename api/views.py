@@ -7,7 +7,7 @@ from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework import status
 from api.models import Employee, Computer, Department, Training, EmployeeTraining, EmployeeComputer, Customer, ProductType, Product, PaymentType, Order, OrderProduct
-from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer, OrderDetailSerializer
+from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer, OrderDetailSerializer, OrderProductViewSerializer
 
 @api_view(['GET'])
 def api_root(request, format=None):
@@ -210,4 +210,4 @@ class OrderViewSet(viewsets.ModelViewSet):
 
 class OrderProductViewSet(viewsets.ModelViewSet):
     queryset = OrderProduct.objects.all()
-    serializer_class = OrderProductSerializer
+    serializer_class = OrderProductViewSerializer

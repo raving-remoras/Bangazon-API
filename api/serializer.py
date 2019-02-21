@@ -205,7 +205,7 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
                 self.fields['customer']=CustomerExtraSerializer(read_only=True)
 
             if(keyword=="products"):
-                self.fields['product']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
+                self.fields['products']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
 
 
     class Meta:
@@ -213,7 +213,7 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
         fields = ("customer", "payment_type", "payment_date", "url")
 
 
-class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
+class OrderProductViewSerializer(serializers.HyperlinkedModelSerializer):
     product=ProductSerializer(read_only=True)
     order=OrderSerializer(read_only=True)
 
@@ -221,6 +221,14 @@ class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = OrderProduct
         fields = ("product", "order")
+
+class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
+    product=ProductSerializer(read_only=True)
+
+
+    class Meta:
+        model = OrderProduct
+        fields = ("product", )
 
 
 class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
@@ -234,9 +242,9 @@ class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
     Author(s): Jase Hackman
     """
 
-    product=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
+    products=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
 
     class Meta:
         model = Order
-        fields = ( "payment_type", "payment_date", "url", "product")
+        fields = ( "payment_type", "payment_date", "url", "products")
 
