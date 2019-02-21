@@ -165,16 +165,86 @@ class PaymentTypeSerializer(serializers.HyperlinkedModelSerializer):
         fields = "__all__"
 
 
+
+class CustomerExtraSerializer(serializers.HyperlinkedModelSerializer):
+    """ Converts Customer model into viewable Data.
+
+        Models: Customer
+
+        Views: none
+
+        Author: Jase Hackman
+    """
+    class Meta:
+        model = Customer
+        fields = ("url", "first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
+
+
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
+    """
+    This Serializer is for Orders. Includes conditional fields if the correct keywords are added to the url.
+
+    Models: Order, Product, OrderProducts
+
+    Views: OrderViewSet
+
+    Author(s): Jase Hackman
+    """
+
+
+    def __init__(self, *args, **kwargs):
+        super(OrderSerializer, self).__init__(*args, **kwargs)
+        if "context" in kwargs:
+            request = kwargs['context']['request']
+            keyword = request.query_params.get('_include', None)
+            print("kwards", kwargs)
+            # if 'instance' in kwargs:
+            #     # instance is what is sent in kwargs when user request just one object.
+            #     print(kwargs['instance'])
+            if(keyword=="customers"):
+                self.fields['customer']=CustomerExtraSerializer(read_only=True)
+
+            if(keyword=="products"):
+                self.fields['products']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
+
 
     class Meta:
         model = Order
-        fields = "__all__"
+        fields = ("customer", "payment_type", "payment_date", "url")
 
 
-class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
+class OrderProductViewSerializer(serializers.HyperlinkedModelSerializer):
+    product=ProductSerializer(read_only=True)
+    order=OrderSerializer(read_only=True)
+
 
     class Meta:
         model = OrderProduct
-        fields = "__all__"
+        fields = ("product", "order")
+
+class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
+    product=ProductSerializer(read_only=True)
+
+
+    class Meta:
+        model = OrderProduct
+        fields = ("product", )
+
+
+class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
+    """
+    This Serializer is for getting back a single order.
+
+    Models: Order, Product, OrderProducts
+
+    Views: OrderViewSet
+
+    Author(s): Jase Hackman
+    """
+
+    products=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
+
+    class Meta:
+        model = Order
+        fields = ( "payment_type", "payment_date", "url", "products")
 
