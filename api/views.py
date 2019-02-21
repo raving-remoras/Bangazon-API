@@ -116,6 +116,12 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+    def destroy(self, request, *args, **kwargs):
+        today = datetime.now()
+        instance = self.get_object()
+        instance.delete_date = today
+        instance.save()
+
 
 class PaymentTypeViewSet(viewsets.ModelViewSet):
     queryset = PaymentType.objects.all()
