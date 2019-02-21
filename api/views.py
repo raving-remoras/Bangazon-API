@@ -1,14 +1,12 @@
+from datetime import datetime
 from django.shortcuts import render
-# from django_filters import rest_framework as filters
-
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework import status
-
 from api.models import Employee, Computer, Department, Training, EmployeeTraining, EmployeeComputer, Customer, ProductType, Product, PaymentType, Order, OrderProduct
-
 from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer, OrderDetailSerializer
 
 @api_view(['GET'])
@@ -34,18 +32,62 @@ class ComputerViewSet(viewsets.ModelViewSet):
 
 
 class DepartmentViewSet(viewsets.ModelViewSet):
+    """ Defines the views for the Department resource.
+
+    Author: Sebastian Civarolo
+    """
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
+    http_method_names = ("get", "post", "put", "options")
+
+    def get_queryset(self):
+        """ Optionally restricts the returned departments by budget greater than specified amount.
+
+        example: ?_filter=budget&_gt=300000
+        """
+
+        queryset = Department.objects.all()
+        _filter = self.request.query_params.get("_filter", None)
+        _gt = self.request.query_params.get("_gt", None)
+
+        if _filter == "budget" and _gt is not None:
+            queryset = queryset.filter(budget__gt=_gt)
+
+        return queryset
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+    http_method_names = ("get", "post", "put", "options")
 
 
 class TrainingViewSet(viewsets.ModelViewSet):
-    queryset = Training.objects.all()
     serializer_class = TrainingSerializer
+    filter_fields=('start_date',)
+    today = datetime.now()
+
+    def get_queryset(self):
+        completed = self.request.query_params.get('completed', None)
+        if completed is not None:
+            if completed == "false":
+                queryset = Training.objects.filter(start_date__date__gte=self.today).order_by("start_date")
+            elif completed == "true":
+                queryset = Training.objects.filter(end_date__date__lte=self.today).order_by("start_date")
+            else:
+                queryset = Training.objects.all()
+        else:
+            queryset = Training.objects.all()
+        return queryset
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        if instance.start_date >= self.today:
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            content = {'Error': 'Training sessions that have been completed cannot be removed'}
+            return Response(content, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
 class EmployeeTrainingViewSet(viewsets.ModelViewSet):
@@ -61,6 +103,9 @@ class EmployeeComputerViewSet(viewsets.ModelViewSet):
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
+    http_method_names = ["get", "post", "put", "options"]
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ("first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
 
 
 class ProductTypeViewSet(viewsets.ModelViewSet):
@@ -71,6 +116,12 @@ class ProductTypeViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+
+    def destroy(self, request, *args, **kwargs):
+        today = datetime.now()
+        instance = self.get_object()
+        instance.delete_date = today
+        instance.save()
 
 
 class PaymentTypeViewSet(viewsets.ModelViewSet):
