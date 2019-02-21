@@ -33,10 +33,28 @@ class ComputerViewSet(viewsets.ModelViewSet):
 
 
 class DepartmentViewSet(viewsets.ModelViewSet):
+    """ Defines the views for the Department resource.
+
+    Author: Sebastian Civarolo
+    """
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
     http_method_names = ("get", "post", "put", "options")
 
+    def get_queryset(self):
+        """ Optionally restricts the returned departments by budget greater than specified amount.
+
+        example: ?_filter=budget&_gt=300000
+        """
+
+        queryset = Department.objects.all()
+        _filter = self.request.query_params.get("_filter", None)
+        _gt = self.request.query_params.get("_gt", None)
+
+        if _filter == "budget" and _gt is not None:
+            queryset = queryset.filter(budget__gt=_gt)
+
+        return queryset
 
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()

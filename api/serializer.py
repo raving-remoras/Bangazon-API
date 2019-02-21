@@ -4,7 +4,33 @@ from api.models import *
 
 # HR Serializers
 
+class DepartmentEmployeeSerializer(serializers.HyperlinkedModelSerializer):
+    """ Employee serializer used by DepartmentSerializer to display current employees so department field is excluded on Employee.
+
+    Author: Sebastian Civarolo
+    """
+
+    class Meta:
+        model = Employee
+        exclude = ("department",)
+
+
 class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
+    """ Displays departments with option to include employees.
+
+    Author: Sebastian Civarolo
+
+    Params:
+        _include=employees -- optionally display all employees in department.
+    """
+
+    def __init__(self, *args, **kwargs):
+        super(DepartmentSerializer, self).__init__(*args, **kwargs)
+        request = kwargs['context']['request']
+        include = request.query_params.get("_include", None)
+
+        if include == "employees":
+            self.fields["employees"] = DepartmentEmployeeSerializer(source="employee_set", many=True, read_only=True)
 
     class Meta:
         model = Department
@@ -35,6 +61,7 @@ class EmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = EmployeeComputer
         fields = "__all__"
+
 
 class CurrentComputerSerializer(serializers.HyperlinkedModelSerializer):
     """Custom Computer Serializer for displaying relevant data for an employee's current_computer
