@@ -38,6 +38,22 @@ class Employee(models.Model):
     is_supervisor = models.BooleanField()
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, blank=True)
 
+    @property
+    def current_computer(self):
+        """Get the employee's current computer, or return None.
+
+        Author: Sebastian Civarolo
+
+        Returns:
+            current_computer -- EmployeeComputer queryset
+        """
+        current_computer = EmployeeComputer.objects.get(employee=self, date_revoked=None)
+
+        if current_computer:
+            return current_computer
+        else:
+            return None
+
     def __str__(self):
         return f"Full Name: {self.first_name} {self.last_name} Start Date: {self.start_date}"
 
@@ -133,7 +149,9 @@ class Customer(models.Model):
     @property
     def used_paymenttypes(self):
         """ Gets used payment types for customer. Else returns none.
+
         Author: Rachel Daniel
+
         Returns: used_paymenttypes (queryset) or None
         """
 
@@ -146,13 +164,10 @@ class Customer(models.Model):
         # exclude customer payment types not in orders
         used_paymenttypes = [pmt for pmt in payment_types for order in orders if pmt == order.payment_type]
 
-
         return used_paymenttypes
-
 
     def __str__(self):
         return f"First Name: {self.first_name} Last Name: {self.last_name} Address:{self.street_address} Phone: {self.phone_number}"
-
 
 # Product Models
 class ProductType(models.Model):
@@ -182,7 +197,6 @@ class Product(models.Model):
     local_delivery = models.BooleanField(default=False)
     delivery_city = models.CharField(max_length=30, blank=True, null=True, default=None)
     delivery_state = models.CharField(max_length=2, blank=True, null=True, default=None)
-
 
     def __str__(self):
         return f"Title: {self.title} Description:{self.description} Price:{self.price} Qty:{self.quantity}"
