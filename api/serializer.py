@@ -114,15 +114,6 @@ class TrainingSerializer(serializers.HyperlinkedModelSerializer):
 
 
 # E-Commerce Serializers
-
-
-class CustomerSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-        model = Customer
-        fields = "__all__"
-
-
 class ProductTypeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
@@ -135,6 +126,36 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
         fields = "__all__"
+
+
+class UsedPaymentSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = PaymentType
+        fields = "__all__"
+
+
+class CustomerSerializer(serializers.HyperlinkedModelSerializer):
+    """ Converts Customer model into viewable Data. Specifies search parameters of "_include=products" and "_include=payments"
+
+        Author: Rachel Daniel
+    """
+
+    def __init__(self, *args, **kwargs):
+        super(CustomerSerializer, self).__init__(*args, **kwargs)
+        request = kwargs['context']['request']
+        include = request.query_params.get("_include")
+        print(include)
+
+        if "products" in include:
+            self.fields["product"] = ProductSerializer(source="product_set", many=True, read_only=True)
+
+        if "payments" in include:
+            self.fields["used_paymenttypes"] = PaymentTypeSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Customer
+        fields = ("url", "first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
 
 
 class PaymentTypeSerializer(serializers.HyperlinkedModelSerializer):
