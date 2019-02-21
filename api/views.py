@@ -1,10 +1,11 @@
 from django.shortcuts import render
 # from django_filters import rest_framework as filters
 
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
+
 
 from api.models import Employee, Computer, Department, Training, EmployeeTraining, EmployeeComputer, Customer, ProductType, Product, PaymentType, Order, OrderProduct
 
@@ -61,16 +62,8 @@ class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
     http_method_names = ["get", "post", "put"]
-
-    # def get_serializer_context(self):
-    #     query_set = self.queryset
-    #     include = self.request.query_params.get("_include")
-    #     q = self.request.query_params.get("q")
-
-    #     if include is not None:
-    #         return {'include': include}
-
-    #     pass
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ("first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
 
 class ProductTypeViewSet(viewsets.ModelViewSet):
     queryset = ProductType.objects.all()

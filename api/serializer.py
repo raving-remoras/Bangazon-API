@@ -70,18 +70,20 @@ class UsedPaymentSerializer(serializers.HyperlinkedModelSerializer):
         fields = "__all__"
 
 class CustomerSerializer(serializers.HyperlinkedModelSerializer):
+    """ Converts Customer model into viewable Data. Specifies search parameters of "_include=products" and "_include=payments"
 
+        Author: Rachel Daniel
+    """
 
     def __init__(self, *args, **kwargs):
         super(CustomerSerializer, self).__init__(*args, **kwargs)
         request = kwargs['context']['request']
         include = request.query_params.get("_include")
-        q = request.query_params.get("q")
 
         if include == "products":
             self.fields["product"] = ProductSerializer(source="product_set", many=True, read_only=True)
 
-        if include == "payments":
+        elif include == "payments":
             self.fields["used_paymenttypes"] = PaymentTypeSerializer(read_only=True, many=True)
 
     class Meta:
