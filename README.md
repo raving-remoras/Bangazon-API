@@ -94,6 +94,7 @@ Write ‘:wq’ to exit vim
     <!-- * GET Active Customers: You can access all customers with an active order by submitting a GET request to `http://localhost:8000/api/v1/customers/?active=true` -->
     * GET Customers & Products: You can access all customers and the products they currently have for sale by submitting a GET request to `http://localhost:8000/api/v1/customers?_include=products`
     * GET Customers & Payment Types: You can access all customers and the payment types they have used to pay for an order by submitting a GET request to `http://localhost:8000/api/v1/customers?_include=payments`
+    * GET Customers with Payment Types & Products: To access both used payment types and products, submit a GET request to `http://localhost:8000/api/v1/customers?_include=payments,products`
     <!-- * GET Inactive Customers: You can access all customers that have NOT created an order by submitting a GET call to `http://localhost:8000/api/v1/customers/?active=false` -->
     * GET Search: You can search all fields of the customer table by submitting a GET request to `http://localhost:8000/api/v1/customers/?q={your-query}` -->
 <!-- * PUT
