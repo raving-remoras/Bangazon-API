@@ -82,6 +82,19 @@ class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
+    def get_queryset(self):
+        query_set = Order.objects.all()
+
+        print(self.request.query_params)
+        keyword = self.request.query_params.get('complete', None)
+        if keyword == "false":
+            print("query params", keyword)
+            query_set = Order.objects.filter(payment_date=None)
+        if keyword == "true":
+            print("query params", keyword)
+            query_set = Order.objects.exclude(payment_date__isnull=True)
+        return query_set
+
 
 
 class OrderProductViewSet(viewsets.ModelViewSet):
