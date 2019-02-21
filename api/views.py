@@ -40,6 +40,7 @@ class DepartmentViewSet(viewsets.ModelViewSet):
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+    http_method_names = ("get", "post", "put", "options")
 
 
 class TrainingViewSet(viewsets.ModelViewSet):
