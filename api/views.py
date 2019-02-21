@@ -53,7 +53,12 @@ class TrainingViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         completed = self.request.query_params.get('completed', None)
         if completed is not None:
-            queryset = Training.objects.filter(start_date__date__gte=self.today).order_by("start_date")
+            if completed == "false":
+                queryset = Training.objects.filter(start_date__date__gte=self.today).order_by("start_date")
+            elif completed == "true":
+                queryset = Training.objects.filter(end_date__date__lte=self.today).order_by("start_date")
+            else:
+                queryset = Training.objects.all()
         else:
             queryset = Training.objects.all()
         return queryset

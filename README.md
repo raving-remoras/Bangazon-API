@@ -76,7 +76,7 @@ Write ‘:wq’ to exit vim
 * GET
     * GET All: You can access a list of all trainings and the employees that have signed up for the training session by submitting a GET request to `http://localhost:8000/api/v1/trainings`
     * GET One: You can get the information of a single training by submitting a GET request to `http://localhost:8000/api/v1/trainings/{trainingID}`
-    * GET Future Training: You can access a list of all training programs starting today by submitting a GET request to `http://localhost:8000/api/v1/trainings`
+    * GET Future Training: You can access a list of all training programs starting today by submitting a GET request to `http://localhost:8000/api/v1/trainings/?completed=false`
 * PUT
     * PUT Update Single Training: You can update a single training's information by submitting a PUT request to `http://localhost:8000/api/v1/trainings/{trainingID}`
         * You must submit the entire changed object which will include: `title`, `start_date`, `end_date`, `max_attendees`
