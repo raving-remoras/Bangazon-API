@@ -29,6 +29,25 @@ class ComputerViewSet(viewsets.ModelViewSet):
     queryset = Computer.objects.all()
     serializer_class = ComputerSerializer
 
+    def destroy(self, request, *args, **kwargs):
+        today = datetime.now()
+        instance=self.get_object()
+        employee_list = EmployeeComputer.objects.filter(computer = instance.id)
+
+        if len(employee_list) > 0:
+            try:
+                assigned_employee = EmployeeComputer.objects.get(computer=instance.id, date_revoked=None)
+                instance.retire_date = today
+                instance.save()
+                assigned_employee.date_revoked = today
+                assigned_employee.save()
+            except:
+                instance.retire_date = today
+                instance.save()
+        else:
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 class DepartmentViewSet(viewsets.ModelViewSet):
     """ Defines the views for the Department resource.
@@ -133,10 +152,27 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+    def destroy(self, request, *args, **kwargs):
+        today = datetime.now()
+        instance = self.get_object()
+        instance.delete_date = today
+        instance.save()
+
 
 class PaymentTypeViewSet(viewsets.ModelViewSet):
     queryset = PaymentType.objects.all()
     serializer_class = PaymentTypeSerializer
+
+    def destroy(self, request, *args, **kwargs):
+        today = datetime.now()
+        instance = self.get_object()
+        completed_orders = Order.objects.filter(payment_type=instance.id)
+        if len(completed_orders) > 0:
+            instance.delete_date = today
+            instance.save()
+        else:
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class OrderViewSet(viewsets.ModelViewSet):
