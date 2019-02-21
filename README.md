@@ -115,8 +115,8 @@ Write ‘:wq’ to exit vim
 <!-- * POST
     * POST New Product: You can post a new product by submitting a POST request to `http://localhost:8000/api/v1/products` -->
   <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
-<!-- * DELETE
-    * DELETE Single Product: You can delete a single product from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/products/{productID}` -->
+* DELETE
+    * DELETE Single Product: You can delete a single product from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/products/{productID}`. This will update the delete_date field to be today's date.
 
 ### Product Type
 <!-- * GET
