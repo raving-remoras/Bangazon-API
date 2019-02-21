@@ -11,6 +11,17 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
         fields = "__all__"
 
 
+class EmployeeDepartmentSerializer(serializers.HyperlinkedModelSerializer):
+    """On employee, department info is displayed without budget
+
+    Author: Sebastian Civarolo
+    """
+
+    class Meta:
+        model = Department
+        exclude = ("budget",)
+
+
 class ComputerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
@@ -19,19 +30,42 @@ class ComputerSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class EmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
+    computer = ComputerSerializer()
 
     class Meta:
         model = EmployeeComputer
         fields = "__all__"
 
+class CurrentComputerSerializer(serializers.HyperlinkedModelSerializer):
+    """Custom Computer Serializer for displaying relevant data for an employee's current_computer
+
+    Author: Sebastian Civarolo
+    """
+
+    class Meta:
+        model = Computer
+        fields = ("url", "make", "model", "serial_no")
+
+
+class CurrentEmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
+    """Custom EmployeeComputer serializer for use when EmployeeComputer is being used for current_computer on Employee
+
+    Author: Sebastian Civarolo
+    """
+
+    class Meta:
+        model = EmployeeComputer
+        exclude = ('employee', )
+
+
 class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
 
-    department = DepartmentSerializer(read_only=True)
-    current_computer = EmployeeComputerSerializer(read_only=True)
+    department = EmployeeDepartmentSerializer(read_only=True)
+    current_computer = CurrentEmployeeComputerSerializer(read_only=True)
 
     class Meta:
         model = Employee
-        fields = ("first_name", "last_name", "start_date", "end_date", "is_supervisor", "department", "current_computer", "computer")
+        fields = ("first_name", "last_name", "start_date", "end_date", "is_supervisor", "department", "current_computer",)
 
 
 class TrainingSerializer(serializers.HyperlinkedModelSerializer):
