@@ -33,30 +33,29 @@ Write ‘:wq’ to exit vim
 ## Corporation Resources
 
 ### Department
-<!-- * GET
+* GET
     * GET All: You can access a list of all departments by submitting a GET request to `http://localhost:8000/api/v1/departments`
     * GET One: You can get the information of a single department by submitting a GET request to `http://localhost:8000/api/v1/departments/{departmentID}`
     * GET Departments & Employees: You can access a list of departments and their associated employees by submitting a GET request to `http://localhost:8000/api/v1/departments?_include=employees`
     * GET Departments with Budget over $300,000: You can access a list of all departments with budgets greater than $300,000 by submitting a GET request to `http://localhost:8000/api/v1/departments?_filter=budget&gt=300000` -->
-<!-- * PUT
-    * PUT Update Single Department: You can update a single department's information by submitting a PUT request to `http://localhost:8000/api/v1/departments/{departmentID}`
-        * You must submit the entire changed object which will include: -->
-  <!-- TODO: Update below list with all elements that need to be passed through -->
-<!-- * POST
-    * POST New Department: You can post a new department by submitting a POST request to `http://localhost:8000/api/v1/departments` -->
-  <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
+* PUT
+    * PUT Update Single Department: You can update a single department's information by submitting a PUT request to `http://localhost:8000/api/v1/departments/{departmentID}
+        * You must submit the entire changed object which will include: `name`, `budget`
+
+* POST
+    * POST New Department: You can post a new department by submitting a POST request to `http://localhost:8000/api/v1/departments`
+        * The following fields must be included: `name`, `budget`
 
 ### Employees
-<!-- * GET
+* GET
     * GET All: You can access a list of all employees, their associated department and current computer by submitting a GET request to `http://localhost:8000/api/v1/employees`
     * GET One: You can get the information of a single employee, their department and current computer by submitting a GET request to `http://localhost:8000/api/v1/employees/{employeeID}` -->
-<!-- * PUT
+* PUT
     * PUT Update Single Employee: You can update a single employee's information by submitting a PUT request to `http://localhost:8000/api/v1/employees/{employeeID}`
-        * You must submit the entire changed object which will include: -->
-  <!-- TODO: Update below list with all elements that need to be passed through -->
-<!-- * POST
-    * POST New Employee: You can post a new employee by submitting a POST request to `http://localhost:8000/api/v1/employees` -->
-  <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
+        * You must submit the entire changed object which will include: `first_name`, `last_name`, `start_date`, `end_date`, `is_supervisor`
+* POST
+    * POST New Employee: You can post a new employee by submitting a POST request to `http://localhost:8000/api/v1/employees`
+        * The following fields must be included: `first_name`, `last_name`, `start_date`, `end_date`, `is_supervisor`
 
 ### Computers
 <!-- * GET
