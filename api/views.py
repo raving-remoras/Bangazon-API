@@ -1,10 +1,14 @@
+from datetime import datetime
 from django.shortcuts import render
 # from django_filters import rest_framework as filters
 
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.reverse import reverse
+
+from rest_framework import filters
 
 from api.models import Employee, Computer, Department, Training, EmployeeTraining, EmployeeComputer, Customer, ProductType, Product, PaymentType, Order, OrderProduct
 
@@ -41,10 +45,27 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
 
-
 class TrainingViewSet(viewsets.ModelViewSet):
-    queryset = Training.objects.all()
     serializer_class = TrainingSerializer
+    filter_fields=('start_date',)
+    today = datetime.now()
+
+    def get_queryset(self):
+        completed = self.request.query_params.get('completed', None)
+        if completed is not None:
+            queryset = Training.objects.filter(start_date__date__gte=self.today).order_by("start_date")
+        else:
+            queryset = Training.objects.all()
+        return queryset
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        if instance.start_date >= self.today:
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            content = {'Error': 'Training sessions that have been completed cannot be removed'}
+            return Response(content, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
 class EmployeeTrainingViewSet(viewsets.ModelViewSet):

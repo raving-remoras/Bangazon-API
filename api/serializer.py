@@ -18,19 +18,19 @@ class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
         fields = "__all__"
 
 
-class TrainingSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-        model = Training
-        fields = "__all__"
-
-
 class EmployeeTrainingSerializer(serializers.HyperlinkedModelSerializer):
+    employee = EmployeeSerializer(read_only=True)
 
     class Meta:
         model = EmployeeTraining
-        fields = "__all__"
+        fields = ('employee',)
 
+class TrainingSerializer(serializers.HyperlinkedModelSerializer):
+    employees=EmployeeTrainingSerializer(source="employeetraining_set", many=True, read_only=True)
+
+    class Meta:
+        model = Training
+        fields = ('id', 'title', 'start_date', 'end_date', 'max_attendees', 'employees')
 
 class ComputerSerializer(serializers.HyperlinkedModelSerializer):
 
