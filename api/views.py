@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
+from rest_framework import status
 
 from api.models import Employee, Computer, Department, Training, EmployeeTraining, EmployeeComputer, Customer, ProductType, Product, PaymentType, Order, OrderProduct
 
@@ -94,6 +95,19 @@ class OrderViewSet(viewsets.ModelViewSet):
             print("query params", keyword)
             query_set = Order.objects.exclude(payment_date__isnull=True)
         return query_set
+
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        print("instance", instance)
+        if instance.payment_date == None:
+            toDelete = instance.orderproduct_set.all()
+            print("products!!!!!!", toDelete)
+            for product in toDelete:
+                product.delete()
+            instance.delete()
+        else:
+            content = {'Error': 'Orders that have been completed cannot be removed'}
+            return Response(content, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
 

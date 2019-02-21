@@ -78,10 +78,11 @@ class PaymentTypeSerializer(serializers.HyperlinkedModelSerializer):
 
 class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
     product=ProductSerializer(read_only=True)
+    customer=CustomerSerializer(read_only=True)
 
     class Meta:
         model = OrderProduct
-        fields = ("product",)
+        fields = ("product", "customer")
 
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
