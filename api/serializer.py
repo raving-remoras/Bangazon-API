@@ -164,13 +164,20 @@ class PaymentTypeSerializer(serializers.HyperlinkedModelSerializer):
         model = PaymentType
         fields = "__all__"
 
-class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
-    product=ProductSerializer(read_only=True)
 
 
+class CustomerExtraSerializer(serializers.HyperlinkedModelSerializer):
+    """ Converts Customer model into viewable Data.
+
+        Models: Customer
+
+        Views: none
+
+        Author: Jase Hackman
+    """
     class Meta:
-        model = OrderProduct
-        fields = ("product",)
+        model = Customer
+        fields = ("url", "first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
 
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
@@ -187,23 +194,33 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
 
     def __init__(self, *args, **kwargs):
         super(OrderSerializer, self).__init__(*args, **kwargs)
-        request = kwargs['context']['request']
-        keyword = request.query_params.get('_include', None)
-        print("kwards", kwargs)
-        if 'instance' in kwargs:
-            # instance is what is sent in kwargs when user request just one object.
-            print(kwargs['instance'])
-        elif(keyword=="customers"):
-            self.fields['customer']=CustomerSerializer(read_only=True)
+        if "context" in kwargs:
+            request = kwargs['context']['request']
+            keyword = request.query_params.get('_include', None)
+            print("kwards", kwargs)
+            # if 'instance' in kwargs:
+            #     # instance is what is sent in kwargs when user request just one object.
+            #     print(kwargs['instance'])
+            if(keyword=="customers"):
+                self.fields['customer']=CustomerExtraSerializer(read_only=True)
 
-        elif(keyword=="products"):
-            self.fields['product']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
+            if(keyword=="products"):
+                self.fields['product']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
 
 
     class Meta:
         model = Order
         fields = ("customer", "payment_type", "payment_date", "url")
 
+
+class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
+    product=ProductSerializer(read_only=True)
+    order=OrderSerializer(read_only=True)
+
+
+    class Meta:
+        model = OrderProduct
+        fields = ("product", "order")
 
 
 class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
@@ -222,3 +239,4 @@ class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Order
         fields = ( "payment_type", "payment_date", "url", "product")
+

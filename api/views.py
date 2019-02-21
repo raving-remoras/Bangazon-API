@@ -169,7 +169,7 @@ class OrderViewSet(viewsets.ModelViewSet):
 
     Author(s): Jase Hackman
     """
-
+    # serializer_class = OrderSerializer
     def get_serializer_class(self):
         # determins which serializer will be used for which type of request
         if self.action == "retrieve":
