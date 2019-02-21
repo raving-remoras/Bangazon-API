@@ -30,6 +30,25 @@ class ComputerViewSet(viewsets.ModelViewSet):
     queryset = Computer.objects.all()
     serializer_class = ComputerSerializer
 
+    def destroy(self, request, *args, **kwargs):
+        today = datetime.now()
+        instance=self.get_object()
+        employee_list = EmployeeComputer.objects.filter(computer = instance.id)
+
+        if len(employee_list) > 0:
+            try:
+                assigned_employee = EmployeeComputer.objects.get(computer=instance.id, date_revoked=None)
+                instance.retire_date = today
+                instance.save()
+                assigned_employee.date_revoked = today
+                assigned_employee.save()
+            except:
+                instance.retire_date = today
+                instance.save()
+        else:
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 class DepartmentViewSet(viewsets.ModelViewSet):
     """ Defines the views for the Department resource.

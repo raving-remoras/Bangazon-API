@@ -68,8 +68,8 @@ Write ‘:wq’ to exit vim
 <!-- * POST
     * POST New Computer: You can post a new computer by submitting a POST request to `http://localhost:8000/api/v1/computers` -->
   <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
-<!-- * DELETE
-    * DELETE Single Computer: You can delete a single computer from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/computers/{computerID}` -->
+* DELETE
+    * DELETE Single Computer: You can delete a single computer from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/computers/{computerID}`. If the computer has ever been assigned to an employee, it's retire date will be set to today, otherwise it will be deleted.
 
 ### Training
 * GET
