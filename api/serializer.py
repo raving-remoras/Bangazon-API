@@ -202,11 +202,12 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
             # if 'instance' in kwargs:
             #     # instance is what is sent in kwargs when user request just one object.
             #     print(kwargs['instance'])
-            if(keyword=="customers"):
-                self.fields['customer']=CustomerExtraSerializer(read_only=True)
+            if keyword:
+                if "customers" in keyword:
+                    self.fields['customer']=CustomerExtraSerializer(read_only=True)
 
-            if(keyword=="products"):
-                self.fields['products']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
+                if "products" in keyword:
+                    self.fields['products']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
 
 
     class Meta:
