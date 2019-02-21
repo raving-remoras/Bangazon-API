@@ -4,7 +4,7 @@ from api.models import *
 
 # HR Serializers
 
-class DepartmentEmployeeSerializer(serializers.HyperlinkedModelSerializer):
+class BasicEmployeeSerializer(serializers.HyperlinkedModelSerializer):
     """ Employee serializer used by DepartmentSerializer to display current employees so department field is excluded on Employee.
 
     Author: Sebastian Civarolo
@@ -30,7 +30,7 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
         include = request.query_params.get("_include", None)
 
         if include == "employees":
-            self.fields["employees"] = DepartmentEmployeeSerializer(source="employee_set", many=True, read_only=True)
+            self.fields["employees"] = BasicEmployeeSerializer(source="employee_set", many=True, read_only=True)
 
     class Meta:
         model = Department
@@ -97,18 +97,20 @@ class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
         fields = ("first_name", "last_name", "start_date", "end_date", "is_supervisor", "department", "current_computer",)
 
 
-class TrainingSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-        model = Training
-        fields = "__all__"
-
-
 class EmployeeTrainingSerializer(serializers.HyperlinkedModelSerializer):
+    employee = BasicEmployeeSerializer(read_only=True)
 
     class Meta:
         model = EmployeeTraining
-        fields = "__all__"
+        fields = ('employee',)
+
+
+class TrainingSerializer(serializers.HyperlinkedModelSerializer):
+    employees=EmployeeTrainingSerializer(source="employeetraining_set", many=True, read_only=True)
+
+    class Meta:
+        model = Training
+        fields = ('id', 'title', 'start_date', 'end_date', 'max_attendees', 'employees')
 
 
 # E-Commerce Serializers
