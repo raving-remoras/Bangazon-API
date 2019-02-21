@@ -127,6 +127,17 @@ class PaymentTypeViewSet(viewsets.ModelViewSet):
     queryset = PaymentType.objects.all()
     serializer_class = PaymentTypeSerializer
 
+    def destroy(self, request, *args, **kwargs):
+        today = datetime.now()
+        instance = self.get_object()
+        completed_orders = Order.objects.filter(payment_type=instance.id)
+        if len(completed_orders) > 0:
+            instance.delete_date = today
+            instance.save()
+        else:
+            self.perform_destroy(instance)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()

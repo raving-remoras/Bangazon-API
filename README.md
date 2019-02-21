@@ -163,5 +163,5 @@ Write ‘:wq’ to exit vim
 <!-- * POST
     * POST New Payment Type: You can post a new payment type by submitting a POST request to `http://localhost:8000/api/v1/paymenttypes` -->
   <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
-<!-- * DELETE
-    * DELETE Single Payment Type: You can delete a single payment type from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/paymenttypes/{paymenttypeID}` -->
+* DELETE
+    * DELETE Single Payment Type: You can delete a single payment type from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/paymenttypes/{paymenttypeID}`. If the payment type has been used on a completed order, it will add today's date as the delete_date.
