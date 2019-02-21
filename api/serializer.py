@@ -49,12 +49,6 @@ class EmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
 # E-Commerce Serializers
 
 
-class CustomerSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-        model = Customer
-        fields = "__all__"
-
 
 class ProductTypeSerializer(serializers.HyperlinkedModelSerializer):
 
@@ -68,6 +62,33 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
         fields = "__all__"
+
+class UsedPaymentSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = PaymentType
+        fields = "__all__"
+
+class CustomerSerializer(serializers.HyperlinkedModelSerializer):
+
+
+    def __init__(self, *args, **kwargs):
+        super(CustomerSerializer, self).__init__(*args, **kwargs)
+        request = kwargs['context']['request']
+        include = request.query_params.get("_include")
+        q = request.query_params.get("q")
+
+        if include == "products":
+            self.fields["product"] = ProductSerializer(source="product_set", many=True, read_only=True)
+
+        if include == "payments":
+            self.fields["used_paymenttypes"] = PaymentTypeSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Customer
+        fields = ("url", "first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
+
+
 
 
 class PaymentTypeSerializer(serializers.HyperlinkedModelSerializer):

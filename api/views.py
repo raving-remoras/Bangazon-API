@@ -60,7 +60,17 @@ class EmployeeComputerViewSet(viewsets.ModelViewSet):
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
+    http_method_names = ["get", "post", "put"]
 
+    # def get_serializer_context(self):
+    #     query_set = self.queryset
+    #     include = self.request.query_params.get("_include")
+    #     q = self.request.query_params.get("q")
+
+    #     if include is not None:
+    #         return {'include': include}
+
+    #     pass
 
 class ProductTypeViewSet(viewsets.ModelViewSet):
     queryset = ProductType.objects.all()
