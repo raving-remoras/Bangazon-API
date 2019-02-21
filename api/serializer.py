@@ -53,6 +53,8 @@ class CurrentEmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
     Author: Sebastian Civarolo
     """
 
+    computer = CurrentComputerSerializer()
+
     class Meta:
         model = EmployeeComputer
         exclude = ('employee', )
