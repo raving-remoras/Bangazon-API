@@ -120,11 +120,28 @@ class EmployeeComputerViewSet(viewsets.ModelViewSet):
 
 
 class CustomerViewSet(viewsets.ModelViewSet):
+    """ Defines view for Customer model. If user enters "active" parameter with "=true" or "=false", the view will filter based on active_customer model property.
+
+        Author: Rachel Daniel
+
+        Methods: get_queryset: returns query_set
+    """
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
     http_method_names = ["get", "post", "put", "options"]
     filter_backends = (filters.SearchFilter,)
     search_fields = ("first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
+
+    def get_queryset(self):
+        query_set = self.queryset
+        active = self.request.query_params.get("active")
+
+        if active is not None:
+            if active == "false":
+                query_set = [x for x in query_set if x.active_customer==False]
+            else:
+                query_set = [x for x in query_set if x.active_customer==True]
+        return query_set
 
 
 class ProductTypeViewSet(viewsets.ModelViewSet):

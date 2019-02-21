@@ -145,13 +145,14 @@ class CustomerSerializer(serializers.HyperlinkedModelSerializer):
         super(CustomerSerializer, self).__init__(*args, **kwargs)
         request = kwargs['context']['request']
         include = request.query_params.get("_include")
-        print(include)
 
-        if "products" in include:
-            self.fields["product"] = ProductSerializer(source="product_set", many=True, read_only=True)
+        if include:
+            if "products" in include:
+                self.fields["product"] = ProductSerializer(source="product_set", many=True, read_only=True)
 
-        if "payments" in include:
-            self.fields["used_paymenttypes"] = PaymentTypeSerializer(read_only=True, many=True)
+            if "payments" in include:
+                self.fields["used_paymenttypes"] = PaymentTypeSerializer(read_only=True, many=True)
+
 
     class Meta:
         model = Customer
@@ -201,11 +202,12 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
             # if 'instance' in kwargs:
             #     # instance is what is sent in kwargs when user request just one object.
             #     print(kwargs['instance'])
-            if(keyword=="customers"):
-                self.fields['customer']=CustomerExtraSerializer(read_only=True)
+            if keyword:
+                if "customers" in keyword:
+                    self.fields['customer']=CustomerExtraSerializer(read_only=True)
 
-            if(keyword=="products"):
-                self.fields['products']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
+                if "products" in keyword:
+                    self.fields['products']=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
 
 
     class Meta:

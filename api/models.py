@@ -166,6 +166,20 @@ class Customer(models.Model):
 
         return used_paymenttypes
 
+    @property
+    def active_customer(self):
+        """ Returns whether or not customer has placed an order yet
+
+        Author: Rachel Daniel
+
+        Returns: Bool
+        """
+
+        # get all orders for customer with associated payment types
+        orders = Order.objects.filter(customer=self).exclude(payment_type=None)
+
+        return bool(orders)
+
     def __str__(self):
         return f"First Name: {self.first_name} Last Name: {self.last_name} Address:{self.street_address} Phone: {self.phone_number}"
 
