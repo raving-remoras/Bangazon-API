@@ -9,7 +9,7 @@ from rest_framework import status
 
 from api.models import Employee, Computer, Department, Training, EmployeeTraining, EmployeeComputer, Customer, ProductType, Product, PaymentType, Order, OrderProduct
 
-from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer
+from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer, OrderDetailSerializer
 
 @api_view(['GET'])
 def api_root(request, format=None):
@@ -88,8 +88,14 @@ class OrderViewSet(viewsets.ModelViewSet):
 
     Author(s): Jase Hackman
     """
+
+    def get_serializer_class(self):
+        # determins which serializer will be used for which type of request
+        if self.action == "retrieve":
+            return OrderDetailSerializer
+        return OrderSerializer
+
     queryset = Order.objects.all()
-    serializer_class = OrderSerializer
 
     def get_queryset(self):
         # If a user includes /?complete=true or /?complete=false the query will filter based on those conditions
@@ -105,6 +111,7 @@ class OrderViewSet(viewsets.ModelViewSet):
             query_set = Order.objects.exclude(payment_date__isnull=True)
         return query_set
 
+
     def destroy(self, request, *args, **kwargs):
         # If an order is not completed it will delete and the OrderProduct relationships will also delete. If it is completed it will raise an error.
         instance = self.get_object()
@@ -118,7 +125,6 @@ class OrderViewSet(viewsets.ModelViewSet):
         else:
             content = {'Error': 'Orders that have been completed cannot be removed'}
             return Response(content, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-
 
 
 class OrderProductViewSet(viewsets.ModelViewSet):
