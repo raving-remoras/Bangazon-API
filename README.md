@@ -134,23 +134,30 @@ Write ‘:wq’ to exit vim
     * DELETE Single Product Type: You can delete a single product type from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/producttypes/{producttypeID}` -->
 
 ### Order
-<!-- * GET
+* GET
     * GET All: You can access a list of all orders by submitting a GET request to `http://localhost:8000/api/v1/orders`
     * GET One: You can access the information of a single order and it's associated products by submitting a GET request to `http://localhost:8000/api/v1/orders/{orderID}`
     * GET Open Orders: You can access a list of only open orders by submitting a GET request to `http://localhost:8000/api/v1/orders?completed=false`
     * GET Closed Orders: You can access a list of only closed orders by submitting a GET request to `http://localhost:8000/api/v1/orders?completed=true`
     * GET Orders & Products: You can access a list of all orders and their associated products by submitting a GET request to `http://localhost:8000/api/v1/orders?_include=products`
     * GET Orders & Customers: You can access a list of all orders and their associated customers by submitting a GET request to `http://localhost:8000/api/v1/orders?_include=customers` -->
-<!-- * PUT
+* PUT
     * PUT Update Single Order: You can update a single order's information by submitting a PUT request to `http://localhost:8000/api/v1/orders/{orderID}`
-        * You must submit the entire changed object which will include: -->
-  <!-- TODO: Update below list with all elements that need to be passed through -->
-<!-- * POST
-    * POST New Order: You can post a new order by submitting a POST request to `http://localhost:8000/api/v1/orders` -->
-  <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
-<!-- * DELETE
+        * You must submit the entire changed object which will include:
+            * Customer
+            * Payment type ("NULL" if an open order)
+            * Payment Date ("NULL" is an open order)
+* POST
+    * POST New Order: You can post a new order by submitting a POST request to `http://localhost:8000/api/v1/orders`
+        * You must submit the entire object which will include:
+            * Customer
+            * Payment type ("NULL" if an open order)
+            * Payment Date ("NULL" is an open order)
+
+* DELETE
     * DELETE Single Order: You can delete a single order from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/orders/{orderID}`
-        * When an order is deleted, this will also remove all associated items in the Order Products table -->
+        * When an order is deleted, this will also remove all associated items in the Order Products table
+        * Only open orders can be deleted. A closed order will result in an error.
 
 ### Payment Type
 <!-- * GET
