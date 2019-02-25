@@ -12,7 +12,7 @@ class BasicEmployeeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Employee
-        exclude = ("department",)
+        fields = ("id", "first_name", "last_name", "start_date", "end_date", "url")
 
 
 class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
@@ -34,7 +34,7 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Department
-        fields = "__all__"
+        fields = ("id", "url", "name", "budget")
 
 
 class EmployeeDepartmentSerializer(serializers.HyperlinkedModelSerializer):
@@ -45,19 +45,19 @@ class EmployeeDepartmentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Department
-        exclude = ("budget",)
+        fields = ("id", "url", "name",)
 
 
 class ComputerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Computer
-        fields = "__all__"
+        fields = ("id", "url", "make", "model", "serial_no", "purchase_date", "retire_date", "employee")
 
 
 class EmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
     computer = ComputerSerializer()
-
+    employeecomputer_id = serializers.ReadOnlyField(source="id")
     class Meta:
         model = EmployeeComputer
         fields = "__all__"
@@ -71,7 +71,7 @@ class CurrentComputerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Computer
-        fields = ("url", "make", "model", "serial_no")
+        fields = ("id", "url", "make", "model", "serial_no")
 
 
 class CurrentEmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
@@ -81,6 +81,7 @@ class CurrentEmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
     """
 
     computer = CurrentComputerSerializer()
+    employeecomputer_id = serializers.ReadOnlyField(source="id")
 
     class Meta:
         model = EmployeeComputer
@@ -94,15 +95,16 @@ class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Employee
-        fields = ("first_name", "last_name", "start_date", "end_date", "is_supervisor", "department", "current_computer", "url")
+        fields = ("id", "first_name", "last_name", "start_date", "end_date", "is_supervisor", "department", "current_computer", "url")
 
 
 class EmployeeTrainingSerializer(serializers.HyperlinkedModelSerializer):
     employee = BasicEmployeeSerializer(read_only=True)
+    employeetraining_id = serializers.ReadOnlyField(source="id")
 
     class Meta:
         model = EmployeeTraining
-        fields = ('employee',)
+        fields = ("employeetraining_id", 'employee',)
 
 
 class TrainingSerializer(serializers.HyperlinkedModelSerializer):
@@ -118,14 +120,14 @@ class ProductTypeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = ProductType
-        fields = "__all__"
+        fields = ("id", "url", "name")
 
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Product
-        fields = "__all__"
+        fields = ("id", "url", "title", "description", "price", "quantity", "delete_date", "local_delivery", "delivery_city", "delivery_state", "seller", "product_type")
 
 
 class UsedPaymentSerializer(serializers.HyperlinkedModelSerializer):
@@ -156,14 +158,14 @@ class CustomerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Customer
-        fields = ("url", "first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
+        fields = ("id", "url", "first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
 
 
 class PaymentTypeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = PaymentType
-        fields = "__all__"
+        fields = ("id", "url", "name", "account_number", "delete_date", "customer")
 
 
 
@@ -178,7 +180,7 @@ class CustomerExtraSerializer(serializers.HyperlinkedModelSerializer):
     """
     class Meta:
         model = Customer
-        fields = ("url", "first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
+        fields = ("id", "url", "first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
 
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
@@ -212,25 +214,25 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Order
-        fields = ("customer", "payment_type", "payment_date", "url")
+        fields = ("id", "customer", "payment_type", "payment_date", "url")
 
 
 class OrderProductViewSerializer(serializers.HyperlinkedModelSerializer):
     product=ProductSerializer(read_only=True)
     order=OrderSerializer(read_only=True)
-
+    orderproduct_id=serializers.ReadOnlyField(source="id")
 
     class Meta:
         model = OrderProduct
-        fields = ("product", "order")
+        fields = ("orderproduct_id", "product", "order")
 
 class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
     product=ProductSerializer(read_only=True)
-
+    orderproduct_id = serializers.ReadOnlyField(source="id")
 
     class Meta:
         model = OrderProduct
-        fields = ("product", )
+        fields = ("id", "product", )
 
 
 class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
@@ -245,8 +247,7 @@ class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
     """
 
     products=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
-
     class Meta:
         model = Order
-        fields = ( "payment_type", "payment_date", "url", "products")
+        fields = ("id", "payment_type", "payment_date", "url", "products",)
 
