@@ -58,16 +58,14 @@ Write ‘:wq’ to exit vim
         * The following fields must be included: `first_name`, `last_name`, `start_date`, `end_date`, `is_supervisor`
 
 ### Computers
-<!-- * GET
+* GET
     * GET All: You can access a list of all computers by submitting a GET request to `http://localhost:8000/api/v1/computers`
-    * GET One: You can get the information of a single computer by submitting a GET request to `http://localhost:8000/api/v1/computers/{computerID}` -->
-<!-- * PUT
+    * GET One: You can get the information of a single computer by submitting a GET request to `http://localhost:8000/api/v1/computers/{computerID}`
+* PUT
     * PUT Update Single Computer: You can update a single computer's information by submitting a PUT request to `http://localhost:8000/api/v1/computers/{computerID}`
-        * You must submit the entire changed object which will include: -->
-  <!-- TODO: Update below list with all elements that need to be passed through -->
-<!-- * POST
-    * POST New Computer: You can post a new computer by submitting a POST request to `http://localhost:8000/api/v1/computers` -->
-  <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
+        * You must submit the entire changed object which will include: `make`, `model`, `serial_no`, `purchase_date`, `retire_date`
+* POST
+    * POST New Computer: You can post a new computer by submitting a POST request to `http://localhost:8000/api/v1/computers`
 * DELETE
     * DELETE Single Computer: You can delete a single computer from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/computers/{computerID}`. If the computer has ever been assigned to an employee, it's retire date will be set to today, otherwise it will be deleted.
 
@@ -97,41 +95,35 @@ Write ‘:wq’ to exit vim
     * GET Active Customers: You can access all customers who have placed an order by submitting a GET request to `http://localhost:8000/api/v1/customers/?active=true`
     * GET Inactive Customers: You can access all customers that have NOT placed an order by submitting a GET call to `http://localhost:8000/api/v1/customers/?active=false`
     * GET Search: You can search all fields of the customer table by submitting a GET request to `http://localhost:8000/api/v1/customers/?q={your-query}` -->
-<!-- * PUT
+* PUT
     * PUT Update Single Customer: You can update a single customer's information by submitting a PUT request to `http://localhost:8000/api/v1/customers/{customerID}`
-        * You must submit the entire changed object, which will include `customerID`, `first_name`, `last_name`, -->
-  <!-- TODO: Come back to this one and list everything out -->
+        * You must submit the entire changed object, which will include `customerID`, `first_name`, `last_name`, `email`, `username`, `street_address`, `city`, `state`, `zipcode`, `phone_number`, `join_date`, `delete_date`
 * POST
-    * POST New Customer: You can post a new customer by submitting a POST request to `http://localhost:8000/api/v1/customers` -->
-  <!-- TODO: Must add notes around what elements are required to be sent in with the request -->
+    * POST New Customer: You can post a new customer by submitting a POST request to `http://localhost:8000/api/v1/customers`
 
 ### Products
-<!-- * GET
+* GET
     * GET All: You can access a list of all products by submitting a GET request to `http://localhost:8000/api/v1/products`
-    * GET One: You can access the information of a single product by submitting a GET request to `http://localhost:8000/api/v1/products/{productID}` -->
-<!-- * PUT
+    * GET One: You can access the information of a single product by submitting a GET request to `http://localhost:8000/api/v1/products/{productID}`
+* PUT
     * PUT Update Single Product: You can update a single product's information by submitting a PUT request to `http://localhost:8000/api/v1/products/{productID}`
-        * You must submit the entire changed object which will include: -->
-  <!-- TODO: Update below list with all elements that need to be passed through -->
-<!-- * POST
-    * POST New Product: You can post a new product by submitting a POST request to `http://localhost:8000/api/v1/products` -->
-  <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
+        * You must submit the entire changed object which will include: `title`, `description`, `price`, `quantity`, `delete_date`, `local_delivery`, `delivery_city`, `delivery_state`, `seller`
+* POST
+    * POST New Product: You can post a new product by submitting a POST request to `http://localhost:8000/api/v1/products`
 * DELETE
     * DELETE Single Product: You can delete a single product from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/products/{productID}`. This will update the delete_date field to be today's date.
 
 ### Product Type
-<!-- * GET
+* GET
     * GET All: You can access a list of all product types by submitting a GET request to `http://localhost:8000/api/v1/producttypes`
-    * GET One: You can access the information of a single product type by submitting a GET request to `http://localhost:8000/api/v1/producttypes/{producttypeID}` -->
-<!-- * PUT
+    * GET One: You can access the information of a single product type by submitting a GET request to `http://localhost:8000/api/v1/producttypes/{producttypeID}`
+* PUT
     * PUT Update Single Product Type: You can update a single product type's information by submitting a PUT request to `http://localhost:8000/api/v1/producttypes/{producttypeID}`
-        * You must submit the entire changed object which will include: -->
-  <!-- TODO: Update below list with all elements that need to be passed through -->
-<!-- * POST
-    * POST New Product Type: You can post a new product type by submitting a POST request to `http://localhost:8000/api/v1/producttypes` -->
-  <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
-<!-- * DELETE
-    * DELETE Single Product Type: You can delete a single product type from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/producttypes/{producttypeID}` -->
+        * You must submit the entire changed object which will include: `name`
+* POST
+    * POST New Product Type: You can post a new product type by submitting a POST request to `http://localhost:8000/api/v1/producttypes`
+* DELETE
+    * DELETE Single Product Type: You can delete a single product type from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/producttypes/{producttypeID}`
 
 ### Order
 * GET
@@ -140,7 +132,7 @@ Write ‘:wq’ to exit vim
     * GET Open Orders: You can access a list of only open orders by submitting a GET request to `http://localhost:8000/api/v1/orders?completed=false`
     * GET Closed Orders: You can access a list of only closed orders by submitting a GET request to `http://localhost:8000/api/v1/orders?completed=true`
     * GET Orders & Products: You can access a list of all orders and their associated products by submitting a GET request to `http://localhost:8000/api/v1/orders?_include=products`
-    * GET Orders & Customers: You can access a list of all orders and their associated customers by submitting a GET request to `http://localhost:8000/api/v1/orders?_include=customers` -->
+    * GET Orders & Customers: You can access a list of all orders and their associated customers by submitting a GET request to `http://localhost:8000/api/v1/orders?_include=customers`
 * PUT
     * PUT Update Single Order: You can update a single order's information by submitting a PUT request to `http://localhost:8000/api/v1/orders/{orderID}`
         * You must submit the entire changed object which will include:
@@ -160,15 +152,13 @@ Write ‘:wq’ to exit vim
         * Only open orders can be deleted. A closed order will result in an error.
 
 ### Payment Type
-<!-- * GET
+* GET
     * GET All: You can access a list of all payment types by submitting a GET request to `http://localhost:8000/api/v1/paymenttypes`
-    * GET One: You can get the information of a single payment type by submitting a GET request to `http://localhost:8000/api/v1/paymenttypes/{paymenttypeID}` -->
-<!-- * PUT
+    * GET One: You can get the information of a single payment type by submitting a GET request to `http://localhost:8000/api/v1/paymenttypes/{paymenttypeID}`
+* PUT
     * PUT Update Single Payment Type: You can update a single payment type's information by submitting a PUT request to `http://localhost:8000/api/v1/paymenttypes/{paymenttypeID}`
-        * You must submit the entire changed object which will include: -->
-  <!-- TODO: Update below list with all elements that need to be passed through -->
-<!-- * POST
-    * POST New Payment Type: You can post a new payment type by submitting a POST request to `http://localhost:8000/api/v1/paymenttypes` -->
-  <!-- TODO: Must add notes around what elements are requred to be sent in with the request -->
+        * You must submit the entire changed object which will include: `name`, `account_number`, `delete_date`, `customer`
+* POST
+    * POST New Payment Type: You can post a new payment type by submitting a POST request to `http://localhost:8000/api/v1/paymenttypes`
 * DELETE
     * DELETE Single Payment Type: You can delete a single payment type from the databse by submitting a DELETE request to `http://localhost:8000/api/v1/paymenttypes/{paymenttypeID}`. If the payment type has been used on a completed order, it will add today's date as the delete_date.

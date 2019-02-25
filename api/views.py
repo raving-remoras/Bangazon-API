@@ -85,6 +85,7 @@ class TrainingViewSet(viewsets.ModelViewSet):
     serializer_class = TrainingSerializer
     filter_fields=('start_date',)
     today = datetime.now()
+    queryset = Training.objects.all()
 
     def get_queryset(self):
         completed = self.request.query_params.get('completed', None)

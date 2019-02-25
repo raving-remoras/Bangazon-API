@@ -6,7 +6,7 @@ router = DefaultRouter()
 # HR
 router.register('departments', views.DepartmentViewSet)
 router.register('employees', views.EmployeeViewSet)
-router.register('trainings', views.TrainingViewSet, 'trainings')
+router.register('trainings', views.TrainingViewSet)
 router.register('employeetrainings', views.EmployeeTrainingViewSet)
 router.register('computers', views.ComputerViewSet)
 router.register('employeecomputers', views.EmployeeComputerViewSet)
