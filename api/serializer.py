@@ -232,7 +232,7 @@ class OrderProductSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = OrderProduct
-        fields = ("id", "product", )
+        fields = ("orderproduct_id", "product", )
 
 
 class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
