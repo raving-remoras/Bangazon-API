@@ -104,7 +104,7 @@ class EmployeeTrainingSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = EmployeeTraining
-        fields = ("employeetraining_id", 'employee',)
+        fields = ("employeetraining_id", "url", 'employee',)
 
 
 class TrainingSerializer(serializers.HyperlinkedModelSerializer):
@@ -112,7 +112,7 @@ class TrainingSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Training
-        fields = ('id', 'title', 'start_date', 'end_date', 'max_attendees', 'employees')
+        fields = ('id', "url", 'title', 'start_date', 'end_date', 'max_attendees', 'employees')
 
 
 # E-Commerce Serializers
