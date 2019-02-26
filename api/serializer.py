@@ -129,7 +129,6 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
         model = Product
         fields = ("id", "url", "title", "description", "price", "quantity", "delete_date", "local_delivery", "delivery_city", "delivery_state", "seller", "product_type")
 
-
 class UsedPaymentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
@@ -250,4 +249,12 @@ class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Order
         fields = ("id", "payment_type", "payment_date", "url", "products",)
+
+class ExpandedProductSerializer(serializers.HyperlinkedModelSerializer):
+    # product_types = ProductTypeSerializer(read_only=True)
+    seller = CustomerExtraSerializer(read_only=True)
+
+    class Meta:
+        model = Product
+        fields = ("id", "url", "title", "description", "price", "quantity", "delete_date", "local_delivery", "delivery_city", "delivery_state", "seller", "product_type")
 
