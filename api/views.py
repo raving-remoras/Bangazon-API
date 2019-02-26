@@ -154,6 +154,13 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+    def get_serializer_class(self):
+        includes = self.request.query_params.get('include', None)
+        if includes is not None:
+            if includes == "seller":
+                return ExpandedProductSerializer
+        return ProductSerializer
+
     def destroy(self, request, *args, **kwargs):
         today = datetime.now()
         instance = self.get_object()

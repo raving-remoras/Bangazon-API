@@ -14,7 +14,6 @@ router.register('employeecomputers', views.EmployeeComputerViewSet)
 # E-com
 router.register('customers', views.CustomerViewSet)
 router.register('products', views.ProductViewSet)
-router.register('productsexpand', views.ProductExpandViewSet)
 router.register('producttypes', views.ProductTypeViewSet)
 router.register('paymenttypes', views.PaymentTypeViewSet)
 router.register('orders', views.OrderViewSet)
