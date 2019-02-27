@@ -4,11 +4,10 @@ from api.models import *
 
 # HR Serializers
 
-class BasicEmployeeSerializer(serializers.HyperlinkedModelSerializer):
-    """ Employee serializer used by DepartmentSerializer to display current employees so department field is excluded on Employee.
-        Also used for when a new employee posts or updates.
+class PostEmployeeSerializer(serializers.HyperlinkedModelSerializer):
+    """ Used for when a new employee posts or updates.
 
-    Author: Sebastian Civarolo, Jase Hackman
+    Author: Jase Hackman
     """
     department=serializers.PrimaryKeyRelatedField(
         queryset=Department.objects.all(),
@@ -17,6 +16,17 @@ class BasicEmployeeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Employee
         fields = ("id", "first_name", "is_supervisor", "last_name", "start_date", "end_date", "url", "department")
+
+
+class BasicEmployeeSerializer(serializers.HyperlinkedModelSerializer):
+    """ Employee serializer used by DepartmentSerializer to display current employees so department field is excluded on Employee.
+
+    Author: Sebastian Civarolo
+    """
+
+    class Meta:
+        model = Employee
+        fields = ("id", "first_name", "last_name", "start_date", "end_date", "url")
 
 
 class DepartmentSerializer(serializers.HyperlinkedModelSerializer):

@@ -7,7 +7,7 @@ from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework import status
 from api.models import Employee, Computer, Department, Training, EmployeeTraining, EmployeeComputer, Customer, ProductType, Product, PaymentType, Order, OrderProduct
-from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer, OrderDetailSerializer, OrderProductViewSerializer, ExpandedProductSerializer, BasicEmployeeSerializer
+from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer, OrderDetailSerializer, OrderProductViewSerializer, ExpandedProductSerializer, PostEmployeeSerializer
 
 @api_view(['GET'])
 def api_root(request, format=None):
@@ -83,13 +83,12 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     """
 
     queryset = Employee.objects.all()
-    # serializer_class = EmployeeSerializer
     http_method_names = ("get", "post", "put", "options")
 
     def get_serializer_class(self):
         # determins which serializer will be used for which type of request
         if self.action == "update" or self.action == "create":
-            return BasicEmployeeSerializer
+            return PostEmployeeSerializer
         return EmployeeSerializer
 
 
