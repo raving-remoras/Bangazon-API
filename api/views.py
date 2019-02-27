@@ -145,7 +145,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
     search_fields = ("first_name", "last_name", "email", "username", "street_address", "city", "state", "zipcode", "phone_number", "join_date", "delete_date")
 
     def get_queryset(self):
-        query_set = self.queryset
+        query_set = Customer.objects.all()
         active = self.request.query_params.get("active")
 
         if active is not None:
