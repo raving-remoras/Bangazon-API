@@ -4,6 +4,20 @@ from api.models import *
 
 # HR Serializers
 
+class PostEmployeeSerializer(serializers.HyperlinkedModelSerializer):
+    """ Used for when a new employee posts or updates.
+
+    Author: Jase Hackman
+    """
+    department=serializers.PrimaryKeyRelatedField(
+        queryset=Department.objects.all(),
+    )
+
+    class Meta:
+        model = Employee
+        fields = ("id", "first_name", "is_supervisor", "last_name", "start_date", "end_date", "url", "department")
+
+
 class BasicEmployeeSerializer(serializers.HyperlinkedModelSerializer):
     """ Employee serializer used by DepartmentSerializer to display current employees so department field is excluded on Employee.
 
@@ -56,11 +70,19 @@ class ComputerSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class EmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
-    computer = ComputerSerializer()
     employeecomputer_id = serializers.ReadOnlyField(source="id")
+
+    computer = serializers.PrimaryKeyRelatedField(
+        queryset=Computer.objects.all(),
+    )
+
+    employee = serializers.PrimaryKeyRelatedField(
+        queryset=Employee.objects.all(),
+    )
     class Meta:
         model = EmployeeComputer
         fields = "__all__"
+
 
 
 class CurrentComputerSerializer(serializers.HyperlinkedModelSerializer):
