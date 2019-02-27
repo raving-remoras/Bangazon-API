@@ -56,11 +56,19 @@ class ComputerSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class EmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
-    computer = ComputerSerializer()
     employeecomputer_id = serializers.ReadOnlyField(source="id")
+
+    computer = serializers.PrimaryKeyRelatedField(
+        queryset=Computer.objects.all(),
+    )
+
+    employee = serializers.PrimaryKeyRelatedField(
+        queryset=Employee.objects.all(),
+    )
     class Meta:
         model = EmployeeComputer
         fields = "__all__"
+
 
 
 class CurrentComputerSerializer(serializers.HyperlinkedModelSerializer):
