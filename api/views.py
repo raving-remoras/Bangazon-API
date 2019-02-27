@@ -7,7 +7,7 @@ from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework import status
 from api.models import Employee, Computer, Department, Training, EmployeeTraining, EmployeeComputer, Customer, ProductType, Product, PaymentType, Order, OrderProduct
-from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer, OrderDetailSerializer, OrderProductViewSerializer, ExpandedProductSerializer
+from api.serializer import EmployeeSerializer, ComputerSerializer, DepartmentSerializer, TrainingSerializer, EmployeeTrainingSerializer, EmployeeComputerSerializer, CustomerSerializer, ProductTypeSerializer, ProductSerializer, PaymentTypeSerializer, OrderSerializer, OrderProductSerializer, OrderDetailSerializer, OrderProductViewSerializer, ExpandedProductSerializer, BasicEmployeeSerializer
 
 @api_view(['GET'])
 def api_root(request, format=None):
@@ -76,9 +76,21 @@ class DepartmentViewSet(viewsets.ModelViewSet):
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):
+    """ Defines Employee view. A post and update use a different serializer than the rest of the actions.
+        Author: Jase
+
+        Methods: get_serializer_class: changes serializer based on action
+    """
+
     queryset = Employee.objects.all()
-    serializer_class = EmployeeSerializer
+    # serializer_class = EmployeeSerializer
     http_method_names = ("get", "post", "put", "options")
+
+    def get_serializer_class(self):
+        # determins which serializer will be used for which type of request
+        if self.action == "update" or self.action == "create":
+            return BasicEmployeeSerializer
+        return EmployeeSerializer
 
 
 class TrainingViewSet(viewsets.ModelViewSet):
@@ -198,7 +210,6 @@ class OrderViewSet(viewsets.ModelViewSet):
 
     Author(s): Jase Hackman
     """
-    # serializer_class = OrderSerializer
     def get_serializer_class(self):
         # determins which serializer will be used for which type of request
         if self.action == "retrieve":
