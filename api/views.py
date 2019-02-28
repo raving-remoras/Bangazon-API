@@ -27,6 +27,11 @@ def api_root(request, format=None):
 
 
 class ComputerViewSet(viewsets.ModelViewSet):
+
+    """ Defines the views for the Computer resource.
+
+    Author: Jase Hackman & unknown
+    """
     queryset = Computer.objects.all()
     serializer_class = ComputerSerializer
 
@@ -48,6 +53,35 @@ class ComputerViewSet(viewsets.ModelViewSet):
         else:
             self.perform_destroy(instance)
             return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def get_queryset(self):
+
+        """ Optionally restricts the returned computers to only unassigned computers
+
+        example: ?_filter=unassigned
+        """
+        queryset=Computer.objects.all()
+
+        _filter = self.request.query_params.get("_filter", None)
+        if _filter == "available":
+            comps=Computer.objects.filter(retire_date=None)
+            employee_comp = EmployeeComputer.objects.all()
+            comp_assigned =list()
+            for rel in employee_comp:
+                if rel.date_revoked == None:
+                    comp_assigned.append(rel.computer_id)
+
+            comp_filter_list = list()
+            for comp in comps:
+                if comp.id not in comp_assigned:
+                    comp_filter_list.append(comp)
+            queryset=comp_filter_list
+
+
+
+        return queryset
+
+
 
 
 class DepartmentViewSet(viewsets.ModelViewSet):
