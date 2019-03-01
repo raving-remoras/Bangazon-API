@@ -61,6 +61,7 @@ Write ‘:wq’ to exit vim
 * GET
     * GET All: You can access a list of all computers by submitting a GET request to `http://localhost:8000/api/v1/computers`
     * GET One: You can get the information of a single computer by submitting a GET request to `http://localhost:8000/api/v1/computers/{computerID}`
+    * GET Available Computers: You can access a list of all computers that are unassigned and are artive by submitting a GET request to `http://localhost:8000/api/v1/computers/?_filter=available`
 * PUT
     * PUT Update Single Computer: You can update a single computer's information by submitting a PUT request to `http://localhost:8000/api/v1/computers/{computerID}`
         * You must submit the entire changed object which will include: `make`, `model`, `serial_no`, `purchase_date`, `retire_date`

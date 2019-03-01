@@ -93,7 +93,7 @@ class CurrentComputerSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Computer
-        fields = ("id", "url", "make", "model", "serial_no")
+        fields = ("id", "url", "make", "model", "serial_no", "purchase_date")
 
 
 class CurrentEmployeeComputerSerializer(serializers.HyperlinkedModelSerializer):
