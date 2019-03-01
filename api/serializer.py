@@ -270,7 +270,7 @@ class OrderDetailSerializer(serializers.HyperlinkedModelSerializer):
     products=OrderProductSerializer(source="orderproduct_set", many = True, read_only=True)
     class Meta:
         model = Order
-        fields = ("id", "payment_type", "payment_date", "url", "products",)
+        fields = ("id", "customer", "payment_type", "payment_date", "url", "products",)
 
 class ExpandedProductSerializer(serializers.HyperlinkedModelSerializer):
     # product_types = ProductTypeSerializer(read_only=True)
